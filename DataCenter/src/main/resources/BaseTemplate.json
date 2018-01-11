@@ -1,0 +1,42 @@
+{
+	"begin-time": "2017-11-30 08:55:51",
+	"concurrence": 2,
+	"end-time": "2017-12-19 08:13:56",
+	"split-class": "com.shuyun.datacenter.MyTaskAssign",
+	"source": {
+		"type": "jdbc",
+		"page-split": "limit",
+		"driver": "com.mysql.jdbc.Driver",
+		"url": "jdbc:mysql://localhost:3306/test_qrtz?useUnicode=true&characterEncoding=utf-8",
+		"username": "root",
+		"password": "root",
+		"fields": "*",
+		"date-field":"XSDATE",
+		"table": "TSALSALEPLU201712_HY"
+	},
+	"target": {
+		"type": "jdbc",
+		"driver": "com.mysql.jdbc.Driver",
+		"url": "jdbc:mysql://localhost:3306/test_qrtz?useUnicode=true&characterEncoding=utf-8",
+		"username": "root",
+		"password": "root",
+		"table": "test"
+	},
+	"topology": {
+		"links": {
+			"dbextract": [
+				"print"
+			]
+		},
+		"start": {
+			"name": "dbextract",
+			"class": "com.shuyun.datacenter.topology.DataBaseExtractNode"
+		},
+		"nodes": {
+			"print": {
+				"name": "print",
+				"class": "com.shuyun.datacenter.topology.PrintNode"
+			}
+		}
+	}
+}

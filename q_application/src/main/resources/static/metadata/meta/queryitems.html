@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<style type="text/css">
+.toolbox {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.unselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.edit {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	margin: 5px 9px 0;
+	width: 16px;
+	background-position: 0 -129px;
+}
+
+.edit:hover {
+	background-position: 0 -24px;
+}
+
+.delete {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	background-position: 0 -155px;
+}
+
+.delete:hover {
+	background-position: 0 -80px;
+}
+
+.hidden-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 320px
+}
+</style>
+</head>
+<body>
+	<div id="query-item" style="padding-top: 50px">
+		<div
+			style="width: 100%; height: 50px; position: fixed; background: #F0F0F0; z-index: 200; top: 0px;">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>查询条件</legend>
+			</fieldset>
+		</div>
+		<div v-if="status=='list'">
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>参数</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="queryitem in queryitems">
+						<td>{{queryitem.id}}</td>
+						<td><div>名称：{{queryitem.display}}</div>
+							<div>引用属性：{{queryitem.attribute}}</div>
+							<div v-for ="param in queryitem.properties">{{param.id}}：{{param.value}}</div></td>
+							<td><span class="delete" @click="deleteItem(queryitem)"></span></td>
+					</tr>
+
+
+				</tbody>
+			</table>
+							<div class="toolbox unselect" @click="status='add'">+</div>
+		</div>
+		<div v-if="status=='add'">
+			<table class="layui-table">
+				<tr>
+					<td width="150px">属性：</td>
+					<td><select id="query-item-attr" class="layui-input">
+							<option v-for="attr in getOtherAttribute()"
+								:value="JSON.stringify(attr)">{{attr.type+"--"+attr.attr.display}}</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>输入类型：</td>
+					<td><select class="layui-input" id="select-type"
+						@change="changeType">
+							<option v-for="type in queryTypes" :value="JSON.stringify(type)">{{type.name}}</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>选项：</td>
+					<td id="checks"><span
+						v-for="select in selectType.detials.select"> <input
+							type="checkbox" :value="select" checked> {{select}}
+					</span></td>
+				</tr>
+				<tr>
+					<td>条件：</td>
+					<td>
+						<div v-for="(value, key, index)  in selectType.detials.inputs">
+							{{key}}:<input type="text" :value="value" :id="key"
+								class="layui-input">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td>提示：</td>
+					<td><input type="text" id="tips" class="layui-input">
+						</div></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="saveQueryItem">保存</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	Array.prototype.removeByValue = function(val) {
+		for (var i = 0; i < this.length; i++) {
+			if (this[i] == val) {
+				this.splice(i, 1);
+				break;
+			}
+		}
+	}
+	var queryTypes = [ {
+		name : "字符输入",
+		detials : {
+			id : "StringType",
+			select : [ '包含', '不包含', '等于', '不等于', '以字符结尾', '以字符开头' ],
+			inputs : {
+				"StringLengthLimit" : "200"
+			}
+		}
+	}, {
+		name : "数字输入",
+		detials : {
+			id : "NumberType",
+			select : [ '大于', '大于等于', '介于', '小于等于', '不等于', '等于', '小于' ],
+			inputs : {
+				NumberInputType : "Int",
+				NumberInputRange : '0,99999999',
+				NumberInputPrecision : 0
+			}
+		}
+	}, {
+		name : "时间选择",
+		detials : {
+			id : "NumberType",
+			select : [ '介于', '早于', '晚于' ],
+			inputs : {
+				DatetimeType : "Support"
+			}
+		}
+	}, {
+		name : "数据选择器类型",
+		detials : {
+			id : "",
+			select : [],
+			inputs : {
+
+			}
+		}
+	} ]
+
+	new Vue({
+		el : "#query-item",
+		data : {
+			queryitems : window.parent.editor.data.queryitems,
+			seg : window.parent.editor.data.segmentation,
+			status : "list",
+			queryTypes : queryTypes,
+			selectType : queryTypes[0]
+		},
+		methods : {
+			getAllAttribute : function() {
+				var array = [];
+				var subjects = this.seg.subjects;
+				for (var i = 0; i < subjects.length; i++) {
+					var subject = subjects[i];
+					var colls = subject.attributeCollections;
+					for (var j = 0; j < colls.length; j++) {
+						var attrs = colls[j].normalAttributes;
+						for (var k = 0; k < attrs.length; k++) {
+							array.push({
+								attr : attrs[k],
+								type : "普通属性"
+							});
+						}
+					}
+					var quotas = subject.quotaAttrs;
+					for (var j = 0; j < quotas.length; j++) {
+						var attr = quotas[j];
+						array.push({
+							attr : attr,
+							type : "指标属性"
+						});
+					}
+				}
+				return array
+			},
+			getOtherAttribute:function(){
+				var fields=this.getAllAttribute();
+				var items=this.queryitems;
+				var array=[];
+				for(var i=0;i<fields.length;i++){
+					var field=fields[i];
+					var flag=true;
+					for(var j=0;j<items.length;j++){
+						var item=items[j];
+						if(item.attribute==field.attr.id){
+							flag=false;
+						}
+					}
+					if(flag){
+						array.push(field);
+					}
+				}
+				return array;
+			},
+			changeType : function() {
+				this.selectType = $.parseJSON($("#select-type").val());
+			},
+			saveQueryItem : function() {
+				var queryItem = {};
+				var attrs = $.parseJSON($("#query-item-attr").val());
+				queryItem.attribute = attrs.attr.id;
+				queryItem.display = attrs.attr.display;
+				queryItem.attributeType = attrs.type;
+				queryItem.id = "queryitem@"
+						+ attrs.attr.id.replace("model@", "");
+				queryItem.queryType = this.selectType.name;
+				queryItem.order = this.queryitems.length;
+				queryItem['compute-by-result'] = false;
+				queryItem['tips'] = $("#tips").val();
+				queryItem.properties = [];
+				var prop1 = {};
+				prop1.id = this.selectType.detials.id;
+				prop1.value = [];
+				$("#checks input:checked").each(function(i, el) {
+					prop1.value.push($(el).val());
+				});
+				queryItem.properties.push(prop1)
+				$.each(this.selectType.detials.inputs, function(key, value) {
+					var prop = {};
+					prop.id = key;
+					prop.value = $("#" + key).val();
+					queryItem.properties.push(prop);
+				})
+				this.queryitems.push(queryItem);
+				$.print(queryItem)
+				this.status = "list";
+			},deleteItem : function(item) {
+				if (confirm("确认删除？")) {
+					this.queryitems.removeByValue(item);
+				}
+			},
+		}
+	})
+</script>
+</html>

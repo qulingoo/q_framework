@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE> ZTREE DEMO - addNodes / editName / removeNode / removeChildNodes</TITLE>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" href="css/demo.css" type="text/css">
+	<link rel="stylesheet" href="css/zTreeStyle/zTreeStyle.css" type="text/css">
+	<script type="text/javascript" src="../jquery-1.11.0.js" ></script>
+	<script type="text/javascript" src="jquery.ztree.all-3.5.min.js"></script>
+	
+	<SCRIPT type="text/javascript">
+		var setting = {
+			view: {
+				selectedMulti: false
+			},
+			edit: {
+				enable: true,
+				showRemoveBtn: false,
+				showRenameBtn: false,
+				editNameSelectAll: true
+			},
+			data: {
+				simpleData: {
+					enable: true
+				}
+			},
+			callback: {
+				beforeDrag: beforeDrag,
+				beforeEditName: beforeEditName,
+				beforeRemove: beforeRemove,
+				beforeRename: beforeRename,
+				onRemove: onRemove,
+				onDrop: onDrop
+			}
+		};
+
+		var zNodes =[
+			{ id:1, pId:0, name:"国防部", open:true},
+			{ id:11, pId:1, name:"总参部"},
+			{ id:12, pId:1, name:"总政治部"},
+			{ id:13, pId:1, name:"总后勤部"},
+			{ id:2, pId:0, name:"外交部", open:true},
+			{ id:21, pId:2, name:"办公厅"},
+			{ id:22, pId:2, name:"亚洲司"},
+			{ id:23, pId:2, name:"欧洲司"},
+			{ id:3, pId:0, name:"教育部", open:true },
+			{ id:31, pId:3, name:"政策法规司"},
+			{ id:32, pId:3, name:"发展规划司"},
+			{ id:33, pId:3, name:"人事司"}
+		];
+		var log, className = "dark";
+		
+		/*是否允许拖拽*/
+		function beforeDrag(treeId, treeNodes) {
+			return true;
+		}
+		/*确认删除*/
+		function beforeRemove(treeId, treeNode) {
+			className = (className === "dark" ? "":"dark");
+			
+			return confirm("确定删除 '" + treeNode.name + "' 节点?");
+		}
+		/*删除后回调函数*/
+		function onRemove(e, treeId, treeNode) {
+			alert('success');
+		}
+		/*被拖拽后回调函数*/
+		function onDrop(event, treeId, treeNodes, targetNode, moveType) {
+			//alert(treeNodes[0].tId + "," + (targetNode ? (targetNode.tId + ", " + targetNode.name) : "isRoot" ));
+		};
+		
+		/*被修改后回调函数*/
+		function beforeRename(treeId, treeNode, newName) {
+			if (newName.length == 0) {
+				alert("Node name can not be empty.");
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				setTimeout(function(){zTree.editName(treeNode)}, 10);
+				return false;
+			}
+			
+			return true;
+		}
+		/*是否允许修改*/
+		function beforeEditName(treeId, treeNode) {
+			className = (className === "dark" ? "":"dark");
+			var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+			zTree.selectNode(treeNode);
+			return confirm("Start node '" + treeNode.name + "' editorial status?");
+		}
+		
+		var newCount = 1;
+		
+		/*初始化tree*/
+		$(document).ready(function(){
+			$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+		});
+		
+		/*初始化右击菜单*/
+		function  init(){
+			$.contextMenu({
+				selector: '#treeDemo li a', 
+				build: function($trigger, e) {
+				$trigger.click();
+					return {
+						items: {
+						"addp": {
+								name: "增加一级节点", 
+								icon: "add",
+								callback: function(key, options) {
+									var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+									treeNode = zTree.addNodes(null, {id:(100 + newCount), pId:0, name:"新节点" + (newCount++)});
+									if (treeNode) {
+										zTree.editName(treeNode[0]);
+									} else {
+										alert("Leaf node is locked and can not add child node.");
+									}
+								}
+							},
+						"add": {
+								name: "增加子节点", 
+								icon: "add",
+								callback: function(key, options) {
+									var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+									isParent = false,
+									nodes = zTree.getSelectedNodes(),
+									treeNode = nodes[0];
+									treeNode = zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:treeNode.name+"新节点"+ (newCount++)});
+									if (treeNode) {
+										zTree.editName(treeNode[0]);
+									} else {
+										alert("Leaf node is locked and can not add child node.");
+									}
+								}
+							},
+							
+							"edit": {
+								name: "编辑", 
+								icon: "edit",
+								callback: function(key, options) {
+									var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+									nodes = zTree.getSelectedNodes(),
+									treeNode = nodes[0];
+									if (nodes.length == 0) {
+										alert("Please select one node at first...");
+										return;
+									}
+									zTree.editName(treeNode);
+								}
+							},
+							"delete": {
+								name: "删除", 
+								icon: "delete",
+								callback: function(key, options) {
+									var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+									nodes = zTree.getSelectedNodes(),
+									treeNode = nodes[0];
+									if (nodes.length == 0) {
+										alert("Please select one node at first...");
+										return;
+									}
+									zTree.removeNode(treeNode, true); 
+								}
+							}
+						}
+					};
+				}
+			});
+		
+		}
+		 
+		window.onload=init;
+		//-->
+	</SCRIPT>
+</HEAD>
+
+<BODY>
+<div class="content_wrap">
+	<div class="zTreeDemoBackground left">
+		<ul id="treeDemo" class="ztree"></ul>
+	</div>
+	
+</div>
+
+</BODY>
+</HTML>

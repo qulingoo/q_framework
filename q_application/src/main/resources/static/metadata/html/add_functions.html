@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+
+<style type="text/css">
+.item {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-indent: 20px;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+}
+
+.current {
+	background: #CCC
+}
+</style>
+</head>
+<body>
+	<div class="layui-form-item">
+		<label class="layui-form-label">名称</label>
+		<div class="layui-input-block">
+			<input type="text" id="name" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">返回值类型</label>
+		<div class="layui-input-block">
+			<input type="text" id="returnDataType" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">参数</label>
+		<div class="layui-input-block">
+			<input type="text" id="paramJson" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item" style="height: 200px">
+		<label class="layui-form-label">函数脚本</label>
+		<div class="layui-input-block" style="height: 200px">
+			<textarea style="height: 200px" type="text" id="expression" lay-verify="title" autocomplete="off"
+				class="layui-input"></textarea>
+		</div>
+	</div>
+	<div class="layui-form-item" style="text-align: center;">
+		<button class="layui-btn" id="add-btn">添加</button>
+	</div>
+</body>
+<script type="text/javascript">
+	 	
+	function addFunction(data, fun) {
+		$.ajax({
+			url : "../../function/add",
+			data : data,
+			success : function(data) {
+				if(fun){
+					fun();
+				}
+			}
+		})
+	}
+	
+	$("#add-btn").click(function(){
+		var data={};
+		data.db_id=uuid();
+		data.name=$("#name").val();
+		data.returnDataType=$("#returnDataType").val();
+		data.paramJson=JSON.stringify($("#paramJson").val().split(","));
+		data.expression=$("#expression").val();
+		addFunction(data,function(){
+			window.parent.layer.closeAll();
+			window.parent.functions.functions.push(data);
+		})
+	})
+</script>
+</html>

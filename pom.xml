@@ -1,0 +1,169 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.shuyun</groupId>
+	<artifactId>q_framework</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.4.1.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+
+
+	<properties>  
+		<version.java.source>1.8</version.java.source>
+		<version.java.target>1.8</version.java.target>
+
+		<version.plugin.maven.assembly>2.4</version.plugin.maven.assembly>
+		<version.plugin.maven.clean>2.2</version.plugin.maven.clean>
+		<version.plugin.maven.compiler>2.1</version.plugin.maven.compiler>
+		<version.plugin.maven.dependency>2.10</version.plugin.maven.dependency>
+		<version.plugin.maven.deploy>2.3</version.plugin.maven.deploy>
+		<version.plugin.maven.install>2.2</version.plugin.maven.install>
+		<version.plugin.maven.antrun>1.7</version.plugin.maven.antrun>
+		<version.plugin.maven.jar>2.2</version.plugin.maven.jar>
+		<version.plugin.maven.resources>2.2</version.plugin.maven.resources>
+
+		<version.spring>4.1.6.RELEASE</version.spring>
+		<version.junit>4.11</version.junit>
+		<version.mybatis>3.2.8</version.mybatis>
+		<version.mybatis.spring>1.2.2</version.mybatis.spring>
+		<version.dbcp>1.4</version.dbcp>
+		<version.mysql>5.1.20</version.mysql>
+		<version.jackson>2.5.0</version.jackson>
+		<version.metrics>3.1.0</version.metrics>
+		<version.cglib>2.2</version.cglib>
+		<!-- Logging -->
+		<logback.version>1.0.13</logback.version>
+		<slf4j.version>1.7.9</slf4j.version>
+		<version.jackson>2.5.0</version.jackson>
+		<fastjson.version>1.1.40</fastjson.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>*</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+
+		</dependency>
+
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz-jobs</artifactId>
+			<version>2.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.15</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.8.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-clients</artifactId>
+			<version>0.8.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+			<version>1.1.1.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${version.plugin.maven.compiler}</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>${version.java.source}</source>
+					<target>${version.java.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+
+	</build>
+	<modules>
+		<module>q_application</module>
+		<module>q_quartz</module>
+		<module>core</module>
+		<module>rest_client</module>
+	 
+		<module>UI_Model</module>
+		<module>sqlgather</module>
+		<module>DataCenter</module>
+	</modules>
+</project>

@@ -1,0 +1,34 @@
+{
+	"config": {
+		"target.driver": "com.mysql.jdbc.Driver",
+		"target.password": "root",
+		"target.username": "root",
+		"target.url": "jdbc:mysql://localhost:3306/test_qrtz?useUnicode=true&characterEncoding=utf-8",
+		"sql": "select * from SHUYUNDD.TSALSALEPLU201712_HY",
+		"table": "TSALSALEPLU201712_HY",
+		"driver": "com.mysql.jdbc.Driver",
+		"password": "root",		 
+		"username": "root",		 
+		"url": "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8"
+	},
+	"topology": {
+		"links": {
+			"null": [
+				"print"
+			],
+			"print": [
+				"dbsave"
+			]
+		},
+		"nodes": {
+			"print": {
+				"name": "print",
+				"class":"com.shuyun.sqlgather.stream.StreamNode"
+			},
+			"dbsave": {
+				"name": "dbsave",
+				"class":"com.shuyun.sqlgather.stream.DBStreamSaveNode"
+			}
+		}
+	}
+}

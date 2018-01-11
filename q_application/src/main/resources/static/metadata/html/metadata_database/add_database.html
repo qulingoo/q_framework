@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css" />
+<script type="text/javascript" src="../../js/jquery-1.11.0.js"></script>
+
+<style type="text/css">
+.item {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-indent: 20px;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+}
+
+.current {
+	background: #CCC
+}
+</style>
+</head>
+<body>
+	<div class="layui-form-item">
+		<label class="layui-form-label">名称</label>
+		<div class="layui-input-block">
+			<input type="text"  id="id" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+		<div class="layui-input-block" style="height: 300px;">
+			<div id="table"
+				style="float: left; height: 100%; border: 1px solid; width: 40%; overflow: auto;">
+			</div>
+			<div style="float: left; height: 100%">
+				<button id="addbtn">》》</button>
+				<br />
+				<button id="removebtn">《《</button>
+			</div>
+			<div  id="added"style="float: left; height: 100%; border: 1px solid; width: 40%">
+
+			</div>
+		</div>
+		<div class="layui-input-block">
+			<button class="layui-btn" id="add-database-btn">添加</button>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	function getAllTable() {
+		var tmp = null;
+		$.ajax({
+			url : "../../../table/getTableByPackId?id=table",
+					
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+	function addDatabase(data,fun){
+		$.ajax({
+			url : "../../../database/add",
+			data:data,
+			success : function(data) {
+			}
+		})
+		
+	}
+	function addDatabaseRef(data,fun){
+		$.ajax({
+			url : "../../../database/addRef",
+			type:"post",
+			data:data,
+			success : function(data) {
+				if(fun){
+				fun()
+					
+				}
+			}
+		})
+		
+	}
+	function init() {
+		var tables = getAllTable();
+		$.each(tables, function(i, table) {
+			var div = $("<div>").addClass("item").text(table.comment).data(
+					"data", table);
+			div.click(function() {
+				$(this).toggleClass("current");
+			})
+			$("#table").append(div);
+		})
+		$("#addbtn").click(function(){
+			$("#table .current").appendTo($("#added"));
+			$(".current").removeClass("current");
+		})
+		$("#removebtn").click(function(){
+			$("#added .current").appendTo($("#table"));
+			$(".current").removeClass("current");
+		})
+		$("#add-database-btn").click(function(){
+			var data={};
+			data.db_id=uuid();
+			data.id=$("#id").val();
+			addDatabase(data);
+			$("#added .item").each(function(i,elt){
+				var table=$(elt).data("data");
+				if(i==$("#added .item").size()-1){
+					addDatabaseRef({db_id:data.db_id,table_id:table.id},function(){
+						window.parent.layer.closeAll();
+						window.parent.resetDb();
+					});
+				}else{
+					addDatabaseRef({db_id:data.db_id,table_id:table.id});
+				}
+			})
+			
+		});
+	}
+	init();
+</script>
+</html>

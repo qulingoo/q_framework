@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+
+<style type="text/css">
+.item {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-indent: 20px;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+}
+
+.current {
+	background: #CCC
+}
+
+body {
+	margin: 2%
+}
+</style>
+</head>
+<body>
+	<div class="layui-form-item">
+		<label class="layui-form-label">名称</label>
+		<div class="layui-input-block">
+			<input type="text" id="name" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">表</label>
+		<div class="layui-input-block">
+			<select id="table" class="layui-input">
+			</select>
+		</div>
+	</div>
+
+	<div class="layui-form-item" style="height: 300px;">
+		<div id="fields"
+			style="float: left; height: 100%; border: 1px solid; width: 40%; overflow: auto;">
+		</div>
+		<div style="float: left; height: 100%">
+			<button id="addbtn">》》</button>
+			<br />
+			<button id="removebtn">《《</button>
+		</div>
+		<div id="added"
+			style="float: left; height: 100%; border: 1px solid; width: 40%;overflow: auto;">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">是否为主</label>
+		<div class="layui-input-block">
+			<select id="ismaster" class="layui-input">
+				<option value="是">是</option>
+				<option value="否">否</option>
+			</select>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">引用主题</label>
+		<div class="layui-input-block">
+			<select id="refsubject" class="layui-input">
+				<option value="是">是</option>
+				<option value="否">否</option>
+			</select>
+		</div>
+	</div>
+	<div class="layui-form-item" style="text-align: center;">
+		<button class="layui-btn" id="add-btn">添加</button>
+	</div>
+
+</body>
+<script type="text/javascript">
+	function getAllTable() {
+		var tmp = null;
+		$.ajax({
+			url : "../../../table/getTableByPackId?id=table",
+
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+	function getAllFieldsById(id) {
+		var tmp = null;
+		$.ajax({
+			url : "../../../field/findByTableId?table_id=" + id,
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+
+	function addNormal(data, fun) {
+		$.ajax({
+			url : "../../subject/normal/add",
+			data : data,
+			success : function(data) {
+				if (fun) {
+					fun();
+				}
+			}
+		})
+
+	}
+	function addNormalRef(data, fun) {
+		$.ajax({
+			url : "../../subject/normal/addRef",
+			type : "post",
+			data : data,
+			success : function(data) {
+				if (fun) {
+					fun()
+
+				}
+			}
+		})
+
+	}
+
+	var tables = getAllTable();
+	function init() {
+
+		$.each(tables, function(i, table) {
+			var option = $("<option>").attr("value", table.id).text(
+					table.comment).data("data", table);
+			$("#table").append(option);
+		})
+		$("#table").change(function() {
+			resetFieldSelect($(this).val())
+		})
+		if (tables.length > 0) {
+			resetFieldSelect(tables[0].id)
+		}
+		$("#addbtn").click(function() {
+			$("#fields .current").appendTo($("#added"));
+			$(".current").removeClass("current");
+		})
+		$("#removebtn").click(function() {
+			$("#added .current").appendTo($("#fields"));
+			$(".current").removeClass("current");
+		})
+		$("#add-btn").click(
+				function() {
+					var data = {};
+					data.db_id = uuid();
+					data.name = $("#name").val();
+					data.table_id = $("#table").val();
+					data.table_name = $("#table option:selected").data("data").comment;
+					data.subject_id = window.parent.currSubject.db_id;
+					data.ismaster = $("#ismaster").val();
+					data.refsubject = $("#refsubject").val();
+					addNormal(data, function() {
+						$("#added .item").each(
+								function(i, item) {
+									var ref = {
+										normal_id : data.db_id
+									}
+									ref.field_id = $(item).data("data").id,
+											ref.field_name = $(item).data(
+													"data").comment,
+											addNormalRef(ref)
+									if (i == $("#added .item").size() - 1) {
+										window.parent.layer.closeAll();
+										window.parent.reset();
+									}
+								})
+					})
+				})
+	}
+
+	function resetFieldSelect(id) {
+		var fields = getAllFieldsById(id);
+		var fieldsDiv = $("#fields").empty();
+		$("#added").empty();
+		$.each(fields, function(i, field) {
+			var div = $("<div>").addClass("item").text(field.comment).data(
+					"data", field);
+			div.click(function() {
+				$(this).toggleClass("current");
+			})
+			fieldsDiv.append(div);
+
+		})
+	}
+	init();
+</script>
+</html>

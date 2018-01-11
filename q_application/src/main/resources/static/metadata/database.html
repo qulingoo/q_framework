@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/contextmenu/smartMenu.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="lib/contextmenu/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div id="database">
+		<div><button @click="openAddView" class="layui-btn">+</button></div>
+		<table class="layui-table">
+		
+			<thead>
+				<tr>
+					<th>模型集合编号</th>
+					<th>模型集合</th>
+					<th>操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="database in databases">
+					<td>{{database.id}}</td>
+					<td><div v-for="ref in database.ref">{{getTableName(ref.table_id)}}</div></td>
+					<td><button class="layui-btn" @click="deleteDb(database.db_id)">删除</button></td>
+				</tr>
+			</tbody>
+		</table>
+	
+	</div>		
+
+</body>
+<script type="text/javascript">
+	layui.use([ 'element', 'laypage', 'layer', 'upload' ], function() {
+		var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		window.layer=layui.layer;
+	});
+
+</script>
+<script type="text/javascript" src="js/module/metadata_database.js">
+</script>
+</html>

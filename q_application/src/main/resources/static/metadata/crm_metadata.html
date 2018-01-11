@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css" href="css/editor.css" />
+<script type="text/javascript" src="lib/ui.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="lib/raphael/raphael.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="lib/raphael/RephaelUtil.js"></script>
+ 
+</head>
+<body>
+</body>
+ 
+<script type="text/javascript">
+layui.use('layer', function(){ //独立版的layer无需执行这一句
+	  var $ = layui.jquery, layer = layui.layer; //独立版的layer无需执行这一句
+	window.layer=layer;
+});
+
+	$.Import("js/module/crm_metadata/Workspace.js");
+	$.Import("js/module/crm_metadata/Toolbar.js");
+	$.Import("js/module/crm_metadata/Editor.js");
+	$.Import("js/module/crm_metadata/DrawingBoard.js");
+	$.Import("js/module/crm_metadata/AttributePanel.js");
+	var editor=new Editor();
+ 	var board=new DrawingBoard("workspace",$(editor.workspace.dom).width(),$(editor.workspace.dom).height());
+</script>
+
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<style type="text/css">
+.table-card {
+	width: 220px;
+	height: 130px;
+	border: 1px solid;
+	border-radius: 10px;
+	margin: 15px;
+	float: left;
+	position: relative;
+	background: url('../img/back1.jpg') 80%;
+}
+
+.unselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.table-card .comment {
+	height: 100px;
+	font-size: 16px;
+	line-height: 70px;
+	text-indent: 20px;
+}
+
+.table-card .code {
+	font-size: 10px;
+	text-indent: 30px;
+}
+
+.table-card .more {
+	position: absolute;
+	right: 5px;
+	cursor: pointer;
+}
+
+.table-card .close {
+	display: none;
+}
+
+.table-card:hover .close {
+	display: block;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	border: 1px solid #000;
+	color: #FFF;
+	text-align: center;
+	background: red;
+	font-size: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}
+
+.toolbox {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.back {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.edit {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	margin: 5px 9px 0;
+	width: 16px;
+	background-position: 0 -129px;
+}
+
+.edit:hover {
+	background-position: 0 -24px;
+}
+
+.delete {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	background-position: 0 -155px;
+}
+
+.delete:hover {
+	background-position: 0 -80px;
+}
+</style>
+</head>
+<body>
+	<div id="database" style="padding-top: 50px">
+		<div
+			style="width: 100%; height: 50px; position: fixed; background: #F0F0F0; z-index: 200; top: 0px;">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>元数据表</legend>
+			</fieldset>
+		</div>
+
+		<div class="layui-form-item">
+			<label class="layui-form-label">编号</label>
+			<div class="layui-input-block">
+				<input type="text" v-model="database.id" class="layui-input">
+			</div>
+		</div>
+
+		<div v-if="status=='table-list'">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>物理表列表</legend>
+			</fieldset>
+			<div v-for="table in database.tables">
+				<div class="table-card unselect">
+					<div class="comment">{{table.comment}}</div>
+					<div class="code">{{table.code}}</div>
+					<div class="more" @click="returnToAttr(table)">>></div>
+					<div class="close" @click="delTable(table)">x</div>
+				</div>
+			</div>
+			<div class="toolbox unselect" @click="status='add-table'">+</div>
+		</div>
+		<div v-if="status=='add-table'">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>添加物理表</legend>
+			</fieldset>
+			<table style="height: 130px; width: 80%" align="center">
+				<tr>
+					<td>表名</td>
+					<td><input id="code" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>别名</td>
+					<td><input id="comment" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="addTable">添加</button></td>
+				</tr>
+			</table>
+
+		</div>
+		<div v-if="status=='attr-list'">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>{{currTable.comment}} 表属性</legend>
+			</fieldset>
+			<table class="layui-table">
+				<thead>
+					<tr>
+						<th>别名</th>
+						<th>字段</th>
+						<th>类型</th>
+						<th>长度</th>
+						<th>精度</th>
+						<th>为空</th>
+						<th>主键</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="field in currTable.fields">
+						<td>{{field.comment}}</td>
+						<td>{{field.code}}</td>
+						<td>{{field.type}}</td>
+						<td>{{field.length}}</td>
+						<td>{{field.decimals}}</td>
+						<td>{{field.allownull}}</td>
+						<td>{{field.iskey}}</td>
+						<td><span class="edit" @click="returnEditField(field)"></span> <span
+							class="delete" @click="deleteField(field)"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="back unselect" @click="status='table-list'"><</div>
+			<div class="toolbox unselect" @click="status='add-field'">+</div>
+		</div>
+		<div v-if="status=='add-field'">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>添加字段到表 {{currTable.comment}}</legend>
+			</fieldset>
+			<table style="height: 130px; width: 80%" align="center">
+				<tr>
+					<td>别名</td>
+					<td><input id="comment" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>字段</td>
+					<td><input id="code" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>类型</td>
+					<td><select id="type" class="layui-input">
+							<option value="VARCHAR">VARCHAR</option>
+							<option value="DATETIME">DATETIME</option>
+							<option value="INT">INT</option>
+							<option value="DECIMAL">DECIMAL</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>长度</td>
+					<td><input id="length" class="layui-input" value="0" /></td>
+				</tr>
+				<tr>
+					<td>精度</td>
+					<td><input id="decimals" class="layui-input" value="0" /></td>
+				</tr>
+				<tr>
+					<td>为空</td>
+					<td><select id="allownull" class="layui-input">
+							<option value="true">是</option>
+							<option value="false">否</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>主键</td>
+					<td><select id="iskey" class="layui-input">
+							<option value="false">否</option>
+							<option value="true">是</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="addField">添加</button></td>
+				</tr>
+			</table>
+
+		</div>
+		<div v-if="status=='edit-field'">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>修改表 {{currTable.comment}}中的字段</legend>
+			</fieldset>
+			<table style="height: 130px; width: 80%" align="center">
+				<tr>
+					<td>别名</td>
+					<td><input id="comment" class="layui-input" v-model="currField.comment"/></td>
+				</tr>
+				<tr>
+					<td>字段</td>
+					<td><input id="code" class="layui-input" v-model="currField.code"/></td>
+				</tr>
+				<tr>
+					<td>类型</td>
+					<td><select id="type" class="layui-input"  v-model="currField.type">
+							<option value="VARCHAR">VARCHAR</option>
+							<option value="DATETIME">DATETIME</option>
+							<option value="INT">INT</option>
+							<option value="DECIMAL">DECIMAL</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>长度</td>
+					<td><input id="length" class="layui-input" value="0" v-model="currField.length" /></td>
+				</tr>
+				<tr>
+					<td>精度</td>
+					<td><input id="decimals" class="layui-input" value="0" v-model="currField.decimals"/></td>
+				</tr>
+				<tr>
+					<td>为空</td>
+					<td><select id="allownull" class="layui-input" v-model="currField.allownull">
+							<option value="true">是</option>
+							<option value="false">否</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>主键</td>
+					<td><select id="iskey" class="layui-input" v-model="currField.iskey">
+							<option value="false">否</option>
+							<option value="true">是</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="status='attr-list'">修改</button></td>
+				</tr>
+			</table>
+
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	Array.prototype.removeByValue = function(val) {
+		for (var i = 0; i < this.length; i++) {
+			if (this[i] == val) {
+				this.splice(i, 1);
+				break;
+			}
+		}
+	}
+	new Vue({
+		el : "#database",
+		data : {
+			database : window.parent.editor.data.database,
+			status : "table-list"
+		},
+		methods : {
+			addTable : function() {
+				var table = {};
+				table.code = $("#code").val();
+				table.comment = $("#comment").val();
+				table.id = "db@" + table.code;
+				this.database.tables.push(table);
+				this.status = "table-list";
+			},
+			delTable : function(table) {
+				if (confirm("确认删除？")) {
+					var tables = this.database.tables
+					tables.removeByValue(table)
+
+				}
+			},
+			returnToAttr : function(table) {
+				this.currTable = table;
+				this.status = "attr-list";
+			},
+			addField : function() {
+				var field = {};
+				field.code = $("#code").val();
+				field.type = $("#type").val();
+				field.length = $("#length").val();
+				field.decimals = $("#decimals").val();
+				field.allownull = $("#allownull").val();
+				field.iskey = $("#iskey").val();
+				field.comment = $("#comment").val();
+				field.id = this.currTable.id + "." + field.code;
+
+				if (!this.currTable.fields) {
+					this.currTable.fields = [];
+				}
+				this.currTable.fields.push(field);
+				this.status = "attr-list";
+			},
+			returnEditField : function(field) {
+				this.currField=field
+				this.status='edit-field';
+			},
+			deleteField:function(field){
+				if (confirm("确认删除？")) {
+					this.currTable.fields.removeByValue(field);
+				}
+			}
+		}
+	})
+</script>
+</html>

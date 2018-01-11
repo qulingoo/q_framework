@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/contextmenu/smartMenu.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="lib/contextmenu/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<style type="text/css">
+.toolbox {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.back {
+	position: fixed;
+	left: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.unselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.edit {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	margin: 5px 9px 0;
+	width: 16px;
+	background-position: 0 -129px;
+}
+
+.edit:hover {
+	background-position: 0 -24px;
+}
+
+.delete {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	background-position: 0 -155px;
+}
+
+.delete:hover {
+	background-position: 0 -80px;
+}
+
+.hidden-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 320px
+}
+
+.table-card {
+	width: 220px;
+	height: 130px;
+	border: 1px solid;
+	border-radius: 10px;
+	margin: 15px;
+	float: left;
+	position: relative;
+	background: url('../img/back1.jpg') 80%;
+}
+
+.unselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.table-card .comment {
+	height: 100px;
+	font-size: 16px;
+	line-height: 70px;
+	text-indent: 20px;
+}
+
+.table-card .code {
+	font-size: 10px;
+	text-indent: 30px;
+}
+
+.table-card .more {
+	position: absolute;
+	right: 5px;
+	bottom:5px;
+	cursor: pointer;
+}
+
+.table-card .close {
+	display: none;
+}
+
+.table-card:hover .close {
+	display: block;
+	width: 10px;
+	height: 10px;
+	line-height: 10px;
+	border: 1px solid #000;
+	color: #FFF;
+	text-align: center;
+	background: red;
+	font-size: 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	position: absolute;
+	top: -5px;
+	right: -5px;
+}
+
+.table-card .display {
+	position: absolute;
+	right: 15px;
+	top: 52px;
+	color: #CCC;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.icon {
+	display: inline-block;
+	height: 28px;
+	width: 28px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+}
+.icon_normal{
+	background: url("img/常用属性.png");
+}
+.icon_dyc{
+	background: url("img/动态属性.png");
+}
+.icon_fun{
+	background: url("img/函数属性.png");
+}
+.icon_qua{
+	background: url("img/指标属性.png");
+}
+.icon_comp{
+	background: url("img/组合属性.png");
+}
+</style>
+</head>
+<body>
+	<div id="subject">
+		<div>
+			<button @click="openAddView" class="layui-btn">+</button>
+		</div>
+		<div v-for="subject in subjects">
+			<div class="table-card unselect">
+				<div class="comment">{{subject.name}}</div>
+				<div class="more">
+					<span class="icon icon_normal" title="常用属性" @click="nomalAttr(subject)"></span>
+					<span class="icon icon_dyc" title="动态属性"></span>
+					<span class="icon icon_fun" title="函数属性"></span>
+					<span class="icon icon_qua" title="指标属性"></span>
+					<span class="icon icon_comp" title="组合属性"></span>
+				</div>
+				<div class="display" @click="returnToEditSubject(subject)">主题</div>
+				<div class="close" @click="delSubject(subject)">x</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	layui.use([ 'element', 'laypage', 'layer', 'upload' ], function() {
+		var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		window.layer = layui.layer;
+	});
+</script>
+<script type="text/javascript" src="js/module/metadata_subject.js">
+	
+</script>
+</html>

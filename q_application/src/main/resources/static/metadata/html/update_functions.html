@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+
+<style type="text/css">
+.item {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-indent: 20px;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+}
+
+.current {
+	background: #CCC
+}
+</style>
+</head>
+<body>
+	<div class="layui-form-item">
+		<label class="layui-form-label">名称</label>
+		<div class="layui-input-block">
+			<input type="text" id="name" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">返回值类型</label>
+		<div class="layui-input-block">
+			<input type="text" id="returnDataType" lay-verify="title"
+				autocomplete="off" class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">参数</label>
+		<div class="layui-input-block">
+			<input type="text" id="paramJson" lay-verify="title"
+				autocomplete="off" class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item" style="height: 200px">
+		<label class="layui-form-label">函数脚本</label>
+		<div class="layui-input-block" style="height: 200px">
+			<textarea style="height: 200px" type="text" id="expression"
+				lay-verify="title" autocomplete="off" class="layui-input"></textarea>
+		</div>
+	</div>
+	<div class="layui-form-item" style="text-align: center;">
+		<button class="layui-btn" id="update-btn">修改</button>
+	</div>
+</body>
+<script type="text/javascript">
+	var params = getUrlParam(window.location.href)
+	$.print(params);
+	function updateFunction(data, fun) {
+		$.ajax({
+			url : "../../function/update",
+			data : data,
+			success : function(data) {
+				if (fun) {
+					fun();
+				}
+			}
+		})
+	}
+	function get(id) {
+		var tmp = null;
+		$.ajax({
+			url : "../../../function/get?id=" + id,
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+	var _function = get(params.id);
+	$("#name").val(_function.name);
+	$("#returnDataType").val(_function.returnDataType);
+	$("#expression").val(_function.expression);
+	$("#paramJson").val($.parseJSON(_function.paramJson).join(","));
+	$("#update-btn").click(function() {
+		var data = {};
+		data.db_id = _function.db_id;
+		data.name = $("#name").val();
+		data.returnDataType = $("#returnDataType").val();
+		data.paramJson = JSON.stringify($("#paramJson").val().split(","));
+		data.expression = $("#expression").val();
+		updateFunction(data, function() {
+			window.parent.layer.closeAll();
+			window.parent.reset();
+		})
+	})
+</script>
+</html>

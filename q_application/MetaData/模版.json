@@ -1,0 +1,10 @@
+{
+	"root":{
+		"database":{
+			"id":"${plat_code}",
+			"tables":[
+				
+			] 
+		} 
+	}
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+<style type="text/css">
+.layui-table td{
+	word-wrap: break-word;
+}
+.table-context {
+	height: 100%;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 80px;
+}
+
+.table-context .toolbox {
+	margin-top: -80px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.table-context .header {
+	height: 40px;
+}
+
+.table-context .body {
+	height: 100%;
+	overflow: auto;
+}
+</style>
+</head>
+<body>
+	<div id="reference-module" style="height: 100%">
+		<div class="table-context" v-if="status=='list'">
+			<div class="toolbox">
+				<button @click="status='add'" class="layui-btn">+</button>
+			</div>
+			<div class="header">
+				<table class="layui-table" style="table-layout: fixed;">
+					<colgroup>
+						<col width="60px">
+						<col width="150px">
+						<col width="150px">
+						<col width="200px">
+						<col width="100px">
+						<col width="100px">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>序号</th>
+							<th>约束类型</th>
+							<th>约束参数</th>
+							<th>操作</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="body">
+				<table class="layui-table" style="table-layout: fixed;">
+					<colgroup>
+						<col width="60px">
+						<col width="150px">
+						<col width="150px">
+						<col width="200px">
+						<col width="100px">
+						<col width="100px">
+					</colgroup>
+					<tbody>
+						<tr v-for="field in fields">
+							<td>{{field.dindex+1}}</td>
+							<td>{{params.table_name}}</td>
+							<td>{{field.comment}}</td>
+							<td>{{field.field_name}}</td>
+							<td>{{switchFieldType(field.types)}}</td>
+							<td>{{field.accuracy}}</td>
+							<td><button @click="updateField(field)" class="layui-btn">修改</button>
+								<button @click="deleteField(field.id)" class="layui-btn">删除</button>
+								<button @click="addReference(field.id)" class="layui-btn">约束</button>
+								</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div v-if="status=='add'" style="width: 80%">
+			<div
+				style="height: 40px; line-height: 40px; font-size: 20pxp; text-indent: 10px">添加字段</div>
+			<div v-html="initAddBody()"></div>
+			<div style="text-align: center;">
+				<button @click="addField()" class="layui-btn">保存</button>
+				<button @click="status='list'" class="layui-btn">取消</button>
+			</div>
+		</div>
+		<div v-if="status=='update'" style="width: 80%">
+			<div
+				style="height: 40px; line-height: 40px; font-size: 20pxp; text-indent: 10px">添加字段</div>
+			<div v-html="initUpdateBody()"></div>
+			<div style="text-align: center;">
+				<button @click="updateFields" class="layui-btn">保存</button>
+				<button @click="status='list'" class="layui-btn">取消</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/module/reference.js">
+	
+</script>
+</html>

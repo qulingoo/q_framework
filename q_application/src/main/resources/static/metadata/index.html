@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+</head>
+<body>
+	<div class="n-resize"></div>
+	<div class="title">
+		<div class="minimize"></div>
+		<div class="maximize"></div>
+		<div class="close"></div>
+	</div>
+	<div class="menu">
+		<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="demo" id="index-menu"
+			style="margin-right: 10px;">
+			<li class="layui-nav-item "><a href="javascript:void(0)">模型管理</a>
+
+				<dl class="layui-nav-child">
+					<dd>
+						<a href="http://localhost:8081/metadata/model.html" target="main">模型</a>
+					</dd>
+					 
+				</dl></li>
+			<li class="layui-nav-item "><a
+				href="http://localhost:8081/three.js-master/examples/webgl_materials_cubemap_dynamic.html"
+				target="main">3D建模工具</a></li>
+		</ul>
+	</div>
+	<div class="body">
+		<iframe id="main-frame" name="main" src="" frameborder="0"
+			width="100%" height="100%"></iframe>
+	</div>
+</body>
+<script type="text/javascript">
+	$.fn.drag = function() {
+		var that = this;
+		$(this).mousedown(function(e) {
+			var oevent = e || window.event;
+			var distanceX = oevent.clientX - this.offsetLeft;
+			var distanceY = oevent.clientY - this.offsetTop;
+			$(this).css("cursor", "move");
+			document.onmousemove = function(e) {
+				var oevent = e || window.event;
+				var x = oevent.clientX - distanceX;
+				var y = oevent.clientY - distanceY;
+				_.move(x, y)
+			}
+			document.onmouseup = function() {
+				document.onmousemove = null;
+				document.onmouseup = null;
+				$(that).css("cursor", "default");
+			}
+			e.stopPropagation();
+			return false;
+		})
+	}
+	$(".title").drag();
+	$("#main-frame").attr("src", _.index())
+	$(document).keydown(function(e) {
+		if (e && e.keyCode == 116) {
+			location.reload();
+			console.info("刷新")
+		}
+	});
+	$(".title>.close").click(function() {
+		_.close();
+	})
+
+	$(".title>.maximize").click(function() {
+		_.maximize();
+	})
+	$(".title>.minimize").click(function() {
+		_.minimize();
+	})
+	$(".menu-ul>li").on("click", function() {
+		$(".menu-ul>.current").removeClass("current");
+		$(this).addClass("current");
+		$("#main-frame").attr("src", $(this).attr("href"))
+	})
+</script>
+
+<script>
+
+class Menu{
+	getMenu(){
+		 var menuDom=$("#index-menu").empty();
+		$.each(menuData,function(i,menu){
+			var li=$("<li class='layui-nav-item'>");
+				var li_a=$("<a>").attr("href","javascript:void(0)").text(menu.name);
+			if(menu.href){
+				li_a.attr("href",menu.href);
+				li_a.attr("target",menu.target);
+			}
+			li.append(li_a);
+			if(menu.childs){
+				var dl=$("<dl class='layui-nav-child'>");
+				li.append(dl);
+				$.each(menu.childs,function(i,child){
+					var dd=$("<dd>");
+					var a=$("<a>").attr("target",child.target).attr("href",child.href).text(child.name);
+					dl.append(dd.append(a));
+				})
+			}
+			menuDom.append(li);
+		})
+	}	
+}
+new Menu().getMenu();
+	layui.use('element', function() {
+		var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+		
+		element.on('nav(demo)', function(elem) {
+		});
+	});
+	
+	
+</script>
+</html>

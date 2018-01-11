@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/contextmenu/smartMenu.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="lib/contextmenu/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+<style type="text/css">
+</style>
+</head>
+<body>
+	<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief"
+		style="margin: 0;">
+		<ul class="layui-tab-title">
+			<li class="layui-this">数据库</li>
+			<li>kafka生产者</li>
+			<li>kafka消费者</li>
+		</ul>
+		<div class="layui-tab-content" style="height: 100px;">
+			<div class="layui-tab-item layui-show" id="database">
+				<div v-for=" ds in databases">
+					<div>
+						<div>{{JSON.parse(ds.config).name}}</div>
+						<div>{{JSON.parse(ds.config).ip}}</div>
+						<div>{{JSON.parse(ds.config).port}}</div>
+						<div>{{JSON.parse(ds.config).dbname}}</div>
+						<div>{{JSON.parse(ds.config).username}}</div>
+						<div>{{JSON.parse(ds.config).password}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="layui-tab-item">2</div>
+			<div class="layui-tab-item">3</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript">
+	layui.use([ 'element', 'laypage', 'layer', 'upload' ], function() {
+		var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+	});
+	$(window).resize(
+			function() {
+				$(".layui-tab-content").height(
+						$(document.documentElement).height()
+								- $(".layui-tab-title").height() - 1)
+			})
+	$(".layui-tab-content").height(
+			$(document.documentElement).height()
+					- $(".layui-tab-title").height() - 1)
+</script>
+<script type="text/javascript" src="js/module/database.js"></script>
+</html>

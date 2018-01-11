@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+<link rel="stylesheet" type="text/css"
+	href="lib/contextmenu/smartMenu.css" />
+<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="lib/contextmenu/jquery-smartMenu.js"></script>
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+*::-webkit-scrollbar-track {
+	background-color: #F5F5F5;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.22);
+}
+/*定义滚动条高宽及背景*/
+*::-webkit-scrollbar {
+	width: 4px;
+	background-color: rgba(0, 0, 0, 0.34);
+}
+/*定义滚动条*/
+*::-webkit-scrollbar-thumb {
+	background-color: #8b8b8b;
+	border-radius: 8px;
+}
+
+.layui-tab-item {
+	width: 100%;
+	height: 100%
+}
+
+.layui-tab-content {
+	padding: 0px;
+}
+
+.toolbox {
+	margin: -80px 0 0;
+	text-indent: 20px;
+	height: 40px;
+	line-height: 40px;
+	height: 40px
+}
+
+.table-head {
+	height: 40px;
+}
+
+.table-body {
+	height: 100%;
+	overflow: auto;
+}
+
+.page-bar {
+	height: 30px;
+	margin-bottom: -35px;
+	text-align: center;
+}
+
+.layui-table {
+	margin: 0
+}
+
+.layui-laypage {
+	margin: 0 auto;
+}
+
+.fileinput-button {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.fileinput-button input {
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	opacity: 0;
+	-ms-filter: 'alpha(opacity=0)';
+	font-size: 200px;
+}
+</style>
+</head>
+<body>
+	<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief"
+		style="margin: 0;">
+		<ul class="layui-tab-title">
+			<li class="layui-this">模型</li>
+		</ul>
+		<div class="layui-tab-content" style="height: 100px;">
+			<div class="layui-tab-item layui-show" id="model"
+				style="padding: 80px 0 0; padding-bottom: 35px; box-sizing: border-box;">
+				<div class="toolbox">
+					<button class="layui-btn  " @click="openAddView">+</button>
+					<span class="layui-btn   fileinput-button"> <span>上传</span>
+						<input type="file" id="file" @change="uploadConfig">
+					</span>
+				</div>
+				<div class="table-head">
+					<table class="layui-table" style="table-layout: fixed;">
+						<colgroup>
+							<col width="150px">
+							<col width="250px">
+							<col width="100px">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>别名</th>
+								<th>表名</th>
+								<th>是否存在</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div class="table-body">
+
+					<table class="layui-table" style="table-layout: fixed;">
+						<colgroup>
+							<col width="150px">
+							<col width="250px">
+							<col width="100px">
+						</colgroup>
+						<tbody id="data-body">
+							<tr v-for="table in tables">
+								<td>{{table.comment}}</td>
+								<td>{{table.table_name}}</td>
+								<td>{{table.is_exist==0?"否":"是"}}</td>
+								<td><button class="layui-btn" @click="openEditTable(table)">修改</button>
+									<button class="layui-btn" @click="deleteTable(table.id)">删除</button>
+									<button class="layui-btn" @click="showFieldView(table)">查看字段</button>
+									<button class="layui-btn" @click="showMongo(table)">mongo</button>
+									<button class="layui-btn" @click="xml(table)">xml</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="page-bar">
+					<div id="page"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+<script type="text/javascript" src="js/model.js"></script>
+<script type="text/javascript">
+	layui.use([ 'element', 'laypage', 'layer', 'upload' ], function() {
+		window.laypage = layui.laypage;
+		window.upload = layui.upload;
+		window.layer = layer;
+		var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		laypage.render({
+			elem : 'page',
+			count : new Dao().count(), //数据总数
+			limit : 50,
+			jump : function(obj) {
+				new Controller().jumpPage(obj.index - 1);
+			}
+		});
+		upload.render({
+			elem : '#upload',
+			url : '/table/upload',
+			accept : 'file',
+			exts : 'xls',
+			done : function(res) {
+				console.log(res)
+			}
+		});
+	});
+	$(window).resize(
+			function() {
+				$(".layui-tab-content").height(
+						$(document.documentElement).height()
+								- $(".layui-tab-title").height() - 1)
+			})
+	$(".layui-tab-content").height(
+			$(document.documentElement).height()
+					- $(".layui-tab-title").height() - 1)
+</script>
+</html>

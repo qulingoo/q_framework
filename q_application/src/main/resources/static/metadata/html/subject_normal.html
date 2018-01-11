@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../layui/layui.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+
+<style type="text/css">
+body {
+	margin: 2%;
+}
+</style>
+</head>
+<body>
+	<div id="normal">
+		<table class="layui-table">
+			<thead>
+				<tr>
+					<th width="200px">集合名称</th>
+					<th width="200px">引用表</th>
+					<th>集合引用属性</th>
+					<th width="150px">操作&emsp;&emsp;&emsp;
+						<button class="layui-btn" @click="add">+</button>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="normal in normals">
+					<td>{{normal.name}}</td>
+					<td>{{normal.table_name}}</td>
+					<td><div v-for="ref in getNormalRef(normal.db_id)">
+							{{ref.field_name}}</div></td>
+					<td><button @click="_delete(normal.db_id)">删除</button></td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+</body>
+<script type="text/javascript">
+	layui.use([ 'element', 'laypage', 'layer', 'upload' ], function() {
+		var $ = layui.jquery, element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+		window.layer = layui.layer;
+	});
+</script>
+<script type="text/javascript">
+	var currSubject = window.parent.currSubject;
+
+	function getAll() {
+		var tmp = null;
+		$.ajax({
+			url : "../../subject/normal/getBySubject?id=" + currSubject.db_id,
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+	function getAllRef(id) {
+		var tmp = null;
+		$.ajax({
+			url : "../../subject/normal/getAllRef?id=" + id,
+			async : false,
+			success : function(data) {
+				tmp = data;
+			}
+		})
+		return tmp;
+	}
+	function add(data, fun) {
+		$.ajax({
+			url : "../../subject/add",
+			data : data,
+			success : function(data) {
+				if (fun) {
+					fun();
+				}
+			}
+		})
+	}
+	var normal=new Vue({
+		el : "#normal",
+		data : {
+			normals : getAll(),
+			reset:{
+				set:false
+			}
+		},
+		methods : {
+			add : function() {
+				layer.open({
+					type : 2,
+					title : false,
+					content : "add_normal.html",
+					area : [ "60%", "80%" ]
+				})
+			},
+			getNormalRef : function(id) {
+				return getAllRef(id);
+			},
+			_delete : function(id) {
+				$.ajax({
+					url : "../../subject/normal/delete?id=" + id,
+					sunccess : function() {
+						reset();
+					}
+				})
+			}
+		}
+	})
+	function reset(){
+		normal.normals = getAll();
+		normal.$set(normal.reset, "set", true);
+	}
+</script>
+</html>

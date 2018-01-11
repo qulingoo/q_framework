@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.0.js" ></script>
+		<style>
+			#show-area {
+				height: 200px;
+				width: 100%;
+				overflow: auto;
+			}
+			
+			#columns {
+				height: 600px;
+				overflow: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div>主题：<input id="subject"></div>
+		<div>
+			<button id="add">新增</button>
+			<button id="show">显示数据</button>
+			<button id="read">读取</button>
+			<button id="show-shell">显示脚本数据</button>
+		</div>
+		<div id="columns">
+		</div>
+		<textarea id="show-area"></textarea>
+	</body>
+	
+	<script>
+		function getDatas(){
+			var datas=[];
+			var subjectName=$("#subject").val();
+			$("#columns>div").each(function(i, el) {
+				var _id = $("#subject").val()+"_"+$(el).find("#field_name").val()+"_"+$(el).find("#tableName").val()+"_"+$(el).find("#columnName").val();
+				var data={};
+				data._id=_id;
+				data.tableName= $(el).find("#tableName").val();
+				data.columnName= $(el).find("#columnName").val();
+				data.isMaster = $(el).find("#isMaster").val()=="true";
+				data.isDisabled = false;
+				data.subjectName=subjectName;
+				datas.push(data);
+			})
+			return datas;
+		}
+		var html = '<div>\
+				表：<input id="tableName">\
+				字段名：<input id="field_name">\
+				列名：<input id="columnName">\
+				是否为主：<select id="isMaster"><option value=false>否</option><option value=true>是</option></select>\
+			</div>';
+		$("#show").click(function() {
+			
+			$("#show-area").val(JSON.stringify(getDatas()));
+		})
+		$("#add").click(function() {
+
+			$("#columns").append(html);
+
+		})
+		$("#read").click(function() {
+			var data = $("#show-area").val();
+			console.info(data)
+			var obj = $.parseJSON(data);
+			$("#columns").empty(); 
+			$.each(obj.columns, function(i, column) {
+				$("#columns").append(html);
+				$("#columns>div:last-child").find("#columnName").val(column.registerColumnName);
+				$("#columns>div:last-child").find("#field_name").val(column.registerColumnComment);
+				$("#columns>div:last-child").find("#tableName").val(obj.registerTableName);
+			})
+		})
+		$("#show-shell").click(function(){
+			var datas=getDatas();
+			var arrs=[];
+			$.each(datas, function(i,data) {
+				arrs.push("db.metasAttributeDoc.save("+JSON.stringify(data)+")");
+			});
+			$("#show-area").val(arrs.join("\n"));
+			
+		})
+	</script>
+</html>

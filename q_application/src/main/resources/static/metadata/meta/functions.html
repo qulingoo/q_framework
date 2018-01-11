@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+<script type="text/javascript" src="../js/vue.js"></script>
+<style type="text/css">
+.toolbox {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	height: 40px;
+	width: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.unselect {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.edit {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	margin: 5px 9px 0;
+	width: 16px;
+	background-position: 0 -129px;
+}
+
+.edit:hover {
+	background-position: 0 -24px;
+}
+
+.delete {
+	cursor: pointer;
+	background: url(../img/edit_delete.png) no-repeat;
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	background-position: 0 -155px;
+}
+
+.delete:hover {
+	background-position: 0 -80px;
+}
+
+.hidden-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	width: 320px
+}
+</style>
+</head>
+<body>
+	<div id="functions" style="padding-top: 50px">
+		<div
+			style="width: 100%; height: 50px; position: fixed; background: #F0F0F0; z-index: 200; top: 0px;">
+			<fieldset class="layui-elem-field layui-field-title"
+				style="margin-top: 20px;">
+				<legend>函数列表</legend>
+			</fieldset>
+		</div>
+		<div v-if="status=='fun-list'">
+			<table class="layui-table"
+				style="word-wrap: break-word; word-break: break-all;">
+				<thead>
+					<tr>
+						<th style="width: 50px">名称</th>
+						<th style="width: 320px">参数列表</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="fun in functions">
+						<td>{{fun.name}}</td>
+						<td><div>id：{{fun.id}}</div><div>返回类型：{{fun.returnDataType}}</div>
+							<div class="hidden-text">参数列表：{{fun.paramJson}}</div>
+							<div class="hidden-text">表达式：{{fun.expression}}</div></td>
+						<td><span class="edit" @click="returnEditFun(fun)"></span>
+							<span class="delete" @click="deleteFun(fun)"></span></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="toolbox unselect" @click="status='add-fun'">+</div>
+		</div>
+		<div v-if="status=='add-fun'">
+			<table style="height: 130px; width: 80%" align="center">
+				<tr>
+					<td>函数名称</td>
+					<td><input id="name" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>返回值类型</td>
+					<td><input id="returnDataType" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>参数列表</td>
+					<td><input id="paramJson" class="layui-input" /></td>
+				</tr>
+				<tr>
+					<td>参数列表</td>
+					<td><textarea id="expression" class="layui-input"
+							style="height: 200px"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="addFun">添加</button></td>
+				</tr>
+			</table>
+		</div>
+		<div v-if="status=='edit-fun'">
+			<table style="height: 130px; width: 80%" align="center">
+				<tr>
+					<td>函数名称</td>
+					<td><input id="name" class="layui-input" v-model="currFun.name" /></td>
+				</tr>
+				<tr>
+					<td>返回值类型</td>
+					<td><input id="returnDataType" class="layui-input" v-model="currFun.returnDataType"/></td>
+				</tr>
+				<tr>
+					<td>参数列表</td>
+					<td><input id="paramJson" class="layui-input" v-model="currFun.paramJson"/></td>
+				</tr>
+				<tr>
+					<td>参数列表</td>
+					<td><textarea id="expression" class="layui-input"
+							style="height: 200px" v-model="currFun.expression"></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="2" style="text-align: center;"><button
+							class="layui-btn" @click="status='fun-list'">修改</button></td>
+				</tr>
+			</table>
+		</div>
+
+
+	</div>
+
+</body>
+<script type="text/javascript">
+	Array.prototype.removeByValue = function(val) {
+		for (var i = 0; i < this.length; i++) {
+			if (this[i] == val) {
+				this.splice(i, 1);
+				break;
+			}
+		}
+	}
+	new Vue({
+		el : "#functions",
+		data : {
+			functions : window.parent.editor.data.functions,
+			status : "fun-list"
+		},
+		methods : {
+			addFun : function() {
+				var fun = {};
+				fun.name = $("#name").val();
+				fun.returnDataType = $("#returnDataType").val();
+				fun.paramJson = $("#paramJson").val();
+				fun.expression = $("#expression").val();
+				fun.id = "model@function" + fun.name;
+				this.functions.push(fun);
+				this.status = "fun-list"
+			},
+			returnEditFun : function(fun) {
+				this.currFun=fun;
+				this.status='edit-fun';
+			},
+			deleteFun : function(fun) {
+				if (confirm("确认删除？")) {
+					 
+					this.functions.removeByValue(fun)
+
+				}
+			}
+		}
+	})
+</script>
+</html>

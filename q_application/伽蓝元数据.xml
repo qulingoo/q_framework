@@ -1,0 +1,1898 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <database id="tebu">
+    <tables>
+      <table id="db@plt_tebu_customer" code="plt_tebu_customer" comment="特步会员表">
+        <fields>
+          <field id="db@plt_tebu_customer.VIP_INFO_ID" code="VIP_INFO_ID" type="VARCHAR" length="22" decimals="0" allownull="true" iskey="true" comment="会员id"/>
+          <field id="db@plt_tebu_customer.BIRTHDATE" code="BIRTHDATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="生日"/>
+          <field id="db@plt_tebu_customer.MEMBERCODE" code="MEMBERCODE" type="VARCHAR" length="100" decimals="0" allownull="true" iskey="false" comment="会员编码"/>
+          <field id="db@plt_tebu_customer.MEMBERNAME" code="MEMBERNAME" type="VARCHAR" length="0" decimals="0" allownull="true" iskey="false" comment="会员名称"/>
+          <field id="db@plt_tebu_customer.MOBILEPHONE" code="MOBILEPHONE" type="VARCHAR" length="100" decimals="0" allownull="true" iskey="false" comment="手机号码"/>
+          <field id="db@plt_tebu_customer.REGISTERDATE" code="REGISTERDATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="注册日期"/>
+          <field id="db@plt_tebu_customer.SEX" code="SEX" type="VARCHAR" length="4" decimals="0" allownull="true" iskey="false" comment="性别"/>
+          <field id="db@plt_tebu_customer.TOTALPOINT" code="TOTALPOINT" type="INT" length="22" decimals="0" allownull="true" iskey="false" comment="总积分"/>
+          <field id="db@plt_tebu_customer.LEAVEPOINTS" code="LEAVEPOINTS" type="INT" length="22" decimals="0" allownull="true" iskey="false" comment="剩余积分"/>
+          <field id="db@plt_tebu_customer.TOTALMONEY" code="TOTALMONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="消费总额"/>
+          <field id="db@plt_tebu_customer.STOREDEFINEID" code="STOREDEFINEID" type="VARCHAR" length="50" decimals="0" allownull="true" iskey="false" comment="注册门店ID"/>
+          <field id="db@plt_tebu_customer.STORENAME" code="STORENAME" type="VARCHAR" length="64" decimals="0" allownull="true" iskey="false" comment="注册门店名称"/>
+          <field id="db@plt_tebu_customer.LEVELNAME" code="LEVELNAME" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="会员等级"/>
+          <field id="db@plt_tebu_customer.MEMBERSOURCECODE" code="MEMBERSOURCECODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="会员来源编码"/>
+          <field id="db@plt_tebu_customer.MEMBERSOURCENAME" code="MEMBERSOURCENAME" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="会员来源名称"/>
+          <field id="db@plt_tebu_customer.PROVINCE" code="PROVINCE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="省份"/>
+          <field id="db@plt_tebu_customer.CITY" code="CITY" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="城市"/>
+          <field id="db@plt_tebu_customer.REGION" code="REGION" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="区域"/>
+          <field id="db@plt_tebu_customer.PROFESSION" code="PROFESSION" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="职业"/>
+          <field id="db@plt_tebu_customer.SALARY" code="SALARY" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="收入水平"/>
+          <field id="db@plt_tebu_customer.CERTIFICATETYPE" code="CERTIFICATETYPE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="证件类型"/>
+          <field id="db@plt_tebu_customer.CERTIFICATECODE" code="CERTIFICATECODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="证件号"/>
+          <field id="db@plt_tebu_customer.COATSIZE" code="COATSIZE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="上衣尺码"/>
+          <field id="db@plt_tebu_customer.SHOESSIZE" code="SHOESSIZE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="鞋的尺码"/>
+          <field id="db@plt_tebu_customer.TROUSERSSIZE" code="TROUSERSSIZE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="下装尺码"/>
+          <field id="db@plt_tebu_customer.INTERESTJOURNEY" code="INTERESTJOURNEY" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好旅行"/>
+          <field id="db@plt_tebu_customer.INTERESTMUSIC" code="INTERESTMUSIC" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好音乐"/>
+          <field id="db@plt_tebu_customer.INTERESTREAD" code="INTERESTREAD" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好阅读"/>
+          <field id="db@plt_tebu_customer.SPORTBASKETBALL" code="SPORTBASKETBALL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好篮球"/>
+          <field id="db@plt_tebu_customer.SPORTEXERCISE" code="SPORTEXERCISE" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好健身"/>
+          <field id="db@plt_tebu_customer.SPORTFOOTBALL" code="SPORTFOOTBALL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好足球"/>
+          <field id="db@plt_tebu_customer.SPORTRUN" code="SPORTRUN" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好跑步"/>
+          <field id="db@plt_tebu_customer.SPORTTENNISBALL" code="SPORTTENNISBALL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好网球"/>
+          <field id="db@plt_tebu_customer.SPORTTENNISBALL" code="SPORTTENNISBALL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好网球"/>
+          <field id="db@plt_tebu_customer.INTERESTORTHERSPORT" code="INTERESTORTHERSPORT" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否爱好其他运动"/>
+          <field id="db@plt_tebu_customer.INTERESTOTHER" code="INTERESTOTHER" type="VARCHAR" length="0" decimals="0" allownull="true" iskey="false" comment="其他爱好"/>
+          <field id="db@plt_tebu_customer.CREATE_TIME" code="CREATE_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="创建时间"/>
+          <field id="db@plt_tebu_customer.MODIFY_TIME" code="MODIFY_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最后修改时间"/>
+          <field id="db@plt_tebu_customer.IS_NEW" code="IS_NEW" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否新会员"/>
+          <field id="db@plt_tebu_customer.FIRSTSALEDATE" code="FIRSTSALEDATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="首次购买时间"/>
+          <field id="db@plt_tebu_customer.LASTSALEDATE" code="LASTSALEDATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最近一次购买日期"/>
+          <field id="db@plt_tebu_customer.POINTCHANGEDATE" code="POINTCHANGEDATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="积分变更日期"/>
+          <field id="db@plt_tebu_customer.SALECOUNT" code="SALECOUNT" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="购买次数"/>
+          <field id="db@plt_tebu_customer.STATUS" code="STATUS" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="状态"/>
+          <field id="db@plt_tebu_customer.EMAIL" code="EMAIL" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="电子邮箱"/>
+          <field id="db@plt_tebu_customer.WECHAT" code="WECHAT" type="VARCHAR" length="100" decimals="0" allownull="true" iskey="false" comment="微信号"/>
+          <field id="db@plt_tebu_customer.LEVELCODE" code="LEVELCODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="会员级别编码"/>
+          <field id="db@plt_tebu_customer.ADDRESS" code="ADDRESS" type="VARCHAR" length="500" decimals="0" allownull="true" iskey="false" comment="地址"/>
+          <field id="db@plt_tebu_customer.SHOPCODE" code="SHOPCODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="注册门店编码"/>
+          <field id="db@plt_tebu_customer.SHOPNAME" code="SHOPNAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="注册门店名称1"/>
+          <field id="db@plt_tebu_customer.SHOP_ID" code="SHOP_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="门店ID"/>
+          <field id="db@plt_tebu_customer.TAOBAONICK" code="TAOBAONICK" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="淘宝账号"/>
+          <field id="db@plt_tebu_customer.ISBINDTMALL" code="ISBINDTMALL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否绑定淘宝"/>
+          <field id="db@plt_tebu_customer.WXUNIONID" code="WXUNIONID" type="VARCHAR" length="512" decimals="0" allownull="true" iskey="false" comment="微信UNID"/>
+          <field id="db@plt_tebu_customer.MACID" code="MACID" type="VARCHAR" length="512" decimals="0" allownull="true" iskey="false" comment="设备MACID"/>
+        </fields>
+      </table>
+      <table id="db@plt_tebu_product" code="plt_tebu_product" comment="特步商品表">
+        <fields>
+          <field id="db@plt_tebu_product.ITEM_ID" code="ITEM_ID" type="INT" length="0" decimals="0" allownull="true" iskey="true" comment="商品ID"/>
+          <field id="db@plt_tebu_product.ITEM_CODE" code="ITEM_CODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="商品编码"/>
+          <field id="db@plt_tebu_product.ITEM_NAME" code="ITEM_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品名称"/>
+          <field id="db@plt_tebu_product.BRAND_ID" code="BRAND_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="品牌ID"/>
+          <field id="db@plt_tebu_product.BRAND_NAME" code="BRAND_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="品牌名称"/>
+          <field id="db@plt_tebu_product.TOP_ITEMTYPE_ID" code="TOP_ITEMTYPE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品大类ID"/>
+          <field id="db@plt_tebu_product.TOP_ITEMTYPE_CODE" code="TOP_ITEMTYPE_CODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="商品大类编码"/>
+          <field id="db@plt_tebu_product.TOP_ITEMTYPE_NAME" code="TOP_ITEMTYPE_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品大类名称"/>
+          <field id="db@plt_tebu_product.ITEMTYPE_ID" code="ITEMTYPE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品类别ID"/>
+          <field id="db@plt_tebu_product.ITEMTYPE_CODE" code="ITEMTYPE_CODE" type="VARCHAR" length="0" decimals="0" allownull="true" iskey="false" comment="商品类别编码"/>
+          <field id="db@plt_tebu_product.ITEMTYPE_NAME" code="ITEMTYPE_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品类别名称"/>
+          <field id="db@plt_tebu_product.UNIT_NAME" code="UNIT_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="计量单位名称"/>
+          <field id="db@plt_tebu_product.PRODUCT_SEASON" code="PRODUCT_SEASON" type="VARCHAR" length="30" decimals="0" allownull="true" iskey="false" comment="产品季"/>
+          <field id="db@plt_tebu_product.SEASON" code="SEASON" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="季节"/>
+          <field id="db@plt_tebu_product.YEAR" code="YEAR" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="年份"/>
+          <field id="db@plt_tebu_product.SERIES_NAME" code="SERIES_NAME" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="系列"/>
+          <field id="db@plt_tebu_product.MATERIAL_NAME" code="MATERIAL_NAME" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="材质"/>
+          <field id="db@plt_tebu_product.UP_DOWN_NAME" code="UP_DOWN_NAME" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="上下装"/>
+          <field id="db@plt_tebu_product.GETTYPE_NAME" code="GETTYPE_NAME" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="领型"/>
+          <field id="db@plt_tebu_product.MARDATE" code="MARDATE" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="上市日期"/>
+          <field id="db@plt_tebu_product.THEME_NAME" code="THEME_NAME" type="VARCHAR" length="50" decimals="0" allownull="true" iskey="false" comment="主题"/>
+          <field id="db@plt_tebu_product.SEX_NAME" code="SEX_NAME" type="VARCHAR" length="10" decimals="0" allownull="true" iskey="false" comment="性别"/>
+          <field id="db@plt_tebu_product.CLOTH_TYPE_NAME" code="CLOTH_TYPE_NAME" type="VARCHAR" length="40" decimals="0" allownull="true" iskey="false" comment="面(布)种"/>
+          <field id="db@plt_tebu_product.COMMEND_NAME" code="COMMEND_NAME" type="VARCHAR" length="30" decimals="0" allownull="true" iskey="false" comment="推广级别"/>
+          <field id="db@plt_tebu_product.IS_SALE" code="IS_SALE" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否销售"/>
+          <field id="db@plt_tebu_product.LABEL_PRICE" code="LABEL_PRICE" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="吊牌价"/>
+          <field id="db@plt_tebu_product.CREATE_TIME" code="CREATE_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="创建时间"/>
+          <field id="db@plt_tebu_product.MODIFY_TIME" code="MODIFY_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最后修改时间"/>
+          <field id="db@plt_tebu_product.IS_DEL" code="IS_DEL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否停用"/>
+        </fields>
+      </table>
+      <table id="db@plt_tebu_order" code="plt_tebu_order" comment="特步订单表">
+        <fields>
+          <field id="db@plt_tebu_order.UD_TICKET_ID" code="UD_TICKET_ID" type="INT" length="0" decimals="0" allownull="true" iskey="true" comment="商品销售主表ID"/>
+          <field id="db@plt_tebu_order.ORG_ID" code="ORG_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="机构ID"/>
+          <field id="db@plt_tebu_order.BILL_TYPE" code="BILL_TYPE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="单据类别"/>
+          <field id="db@plt_tebu_order.TICKET_NO" code="TICKET_NO" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="单据编号"/>
+          <field id="db@plt_tebu_order.REPORT_DATE" code="REPORT_DATE" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="销售时间"/>
+          <field id="db@plt_tebu_order.SHOP_ID" code="SHOP_ID" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="门店ID"/>
+          <field id="db@plt_tebu_order.SHOP_CODE" code="SHOP_CODE" type="VARCHAR" length="20" decimals="0" allownull="true" iskey="false" comment="门店编码"/>
+          <field id="db@plt_tebu_order.SHOP_NAME" code="SHOP_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="门店名称"/>
+          <field id="db@plt_tebu_order.BILL_STATUS" code="BILL_STATUS" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="单据状态"/>
+          <field id="db@plt_tebu_order.TOTAL_COUNT" code="TOTAL_COUNT" type="DECIMAL" length="18" decimals="2" allownull="true" iskey="false" comment="数量合计"/>
+          <field id="db@plt_tebu_order.TOTAL_MONEY" code="TOTAL_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="商品总金额"/>
+          <field id="db@plt_tebu_order.TOTAL_DISCOUNT_MONEY" code="TOTAL_DISCOUNT_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="总折扣额"/>
+          <field id="db@plt_tebu_order.RECEIVABLE_MONEY" code="RECEIVABLE_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="应收金额"/>
+          <field id="db@plt_tebu_order.ACTUAl_MONEY" code="ACTUAl_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="实收金额"/>
+          <field id="db@plt_tebu_order.VIP_CARD_NO" code="VIP_CARD_NO" type="VARCHAR" length="22" decimals="0" allownull="true" iskey="false" comment="VIP卡号"/>
+          <field id="db@plt_tebu_order.VIP_LEVEL" code="VIP_LEVEL" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="VIP卡级别"/>
+          <field id="db@plt_tebu_order.CASH_RMB_MONEY" code="CASH_RMB_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="人民币金额"/>
+          <field id="db@plt_tebu_order.BANK_CARD_MONEY" code="BANK_CARD_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="刷卡金额"/>
+          <field id="db@plt_tebu_order.CASH_COUPON_MONEY" code="CASH_COUPON_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="代金券金额"/>
+          <field id="db@plt_tebu_order.THIRD_PARTY_MONEY" code="THIRD_PARTY_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="第三方金额"/>
+          <field id="db@plt_tebu_order.FACETOFACE_MONEY" code="FACETOFACE_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="当面付金额"/>
+          <field id="db@plt_tebu_order.STORED_VALUE_CARD_MONEY" code="STORED_VALUE_CARD_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="储值卡金额"/>
+          <field id="db@plt_tebu_order.POINTS_MONEY" code="POINTS_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="积分金额"/>
+          <field id="db@plt_tebu_order.OUT_POINTS" code="OUT_POINTS" type="DECIMAL" length="18" decimals="2" allownull="true" iskey="false" comment="消费积分"/>
+          <field id="db@plt_tebu_order.IN_POINTS" code="IN_POINTS" type="DECIMAL" length="18" decimals="2" allownull="true" iskey="false" comment="累计积分"/>
+          <field id="db@plt_tebu_order.MODIFY_TIME" code="MODIFY_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最后修改时间"/>
+        </fields>
+      </table>
+      <table id="db@plt_tebu_order_item" code="plt_tebu_order_item" comment="特步子订单表">
+        <fields>
+          <field id="db@plt_tebu_order_item.UD_TICKET_LINE_ID" code="UD_TICKET_LINE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="true" comment="商品销售明细表ID"/>
+          <field id="db@plt_tebu_order_item.UD_TICKET_ID" code="UD_TICKET_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品销售主表ID"/>
+          <field id="db@plt_tebu_order_item.TICKET_ID" code="TICKET_ID" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="小票ID"/>
+          <field id="db@plt_tebu_order_item.OLD_TICKET_ID" code="OLD_TICKET_ID" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="原小票ID"/>
+          <field id="db@plt_tebu_order_item.OLD_UD_TICKET_LINE_ID" code="OLD_UD_TICKET_LINE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="原小票明细ID"/>
+          <field id="db@plt_tebu_order_item.SOURCE_TYPE" code="SOURCE_TYPE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="来源单据类型"/>
+          <field id="db@plt_tebu_order_item.SOURCE_NO" code="SOURCE_NO" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="来源单据号"/>
+          <field id="db@plt_tebu_order_item.SHOP_CODE" code="SHOP_CODE" type="VARCHAR" length="20" decimals="0" allownull="true" iskey="false" comment="门店编码"/>
+          <field id="db@plt_tebu_order_item.SHOP_NAME" code="SHOP_NAME" type="VARCHAR" length="0" decimals="0" allownull="true" iskey="false" comment="门店名称"/>
+          <field id="db@plt_tebu_order_item.SHOP_ID" code="SHOP_ID" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="门店ID"/>
+          <field id="db@plt_tebu_order_item.SALE_TIME" code="SALE_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="销售时间"/>
+          <field id="db@plt_tebu_order_item.DESCRIPTION" code="DESCRIPTION" type="VARCHAR" length="1024" decimals="0" allownull="true" iskey="false" comment="描述"/>
+          <field id="db@plt_tebu_order_item.ITEM_ID" code="ITEM_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品ID"/>
+          <field id="db@plt_tebu_order_item.ITEM_CODE" code="ITEM_CODE" type="VARCHAR" length="20" decimals="0" allownull="true" iskey="false" comment="商品编码"/>
+          <field id="db@plt_tebu_order_item.BAR_CODE" code="BAR_CODE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="商品条码"/>
+          <field id="db@plt_tebu_order_item.ITEM_NAME" code="ITEM_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品名称"/>
+          <field id="db@plt_tebu_order_item.COLOR_CODE" code="COLOR_CODE" type="VARCHAR" length="20" decimals="0" allownull="true" iskey="false" comment="颜色编码"/>
+          <field id="db@plt_tebu_order_item.COLOR_NAME" code="COLOR_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="颜色名称"/>
+          <field id="db@plt_tebu_order_item.SIZE_CODE" code="SIZE_CODE" type="VARCHAR" length="20" decimals="0" allownull="true" iskey="false" comment="尺码编码"/>
+          <field id="db@plt_tebu_order_item.SIZE_NAME" code="SIZE_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="尺码名称"/>
+          <field id="db@plt_tebu_order_item.TOP_ITEMTYPE_ID" code="TOP_ITEMTYPE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品大类ID"/>
+          <field id="db@plt_tebu_order_item.TOP_ITEMTYPE_NAME" code="TOP_ITEMTYPE_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品大类名称"/>
+          <field id="db@plt_tebu_order_item.ITEMTYPE_ID" code="ITEMTYPE_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="商品类别ID"/>
+          <field id="db@plt_tebu_order_item.ITEMTYPE_NAME" code="ITEMTYPE_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="商品类别名称"/>
+          <field id="db@plt_tebu_order_item.LABEL_PRICE" code="LABEL_PRICE" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="吊牌价"/>
+          <field id="db@plt_tebu_order_item.QUANTITY" code="QUANTITY" type="DECIMAL" length="18" decimals="2" allownull="true" iskey="false" comment="商品数量"/>
+          <field id="db@plt_tebu_order_item.MONEY" code="MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="金额"/>
+          <field id="db@plt_tebu_order_item.RET_QUANTITY" code="RET_QUANTITY" type="DECIMAL" length="18" decimals="2" allownull="true" iskey="false" comment="退货数量"/>
+          <field id="db@plt_tebu_order_item.RET_MONEY" code="RET_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="退货金额"/>
+          <field id="db@plt_tebu_order_item.REAL_UNIT_PRICE" code="REAL_UNIT_PRICE" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="实际零售价格"/>
+          <field id="db@plt_tebu_order_item.REAL_MONEY" code="REAL_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="实际零售金额"/>
+          <field id="db@plt_tebu_order_item.NON_VIP_DISCOUNT_MONEY" code="NON_VIP_DISCOUNT_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="非会员常规折扣额"/>
+          <field id="db@plt_tebu_order_item.VIP_DISCOUNT_MONEY" code="VIP_DISCOUNT_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="会员常规折扣额"/>
+          <field id="db@plt_tebu_order_item.PACKAGE_DISCOUNT_MONEY" code="PACKAGE_DISCOUNT_MONEY" type="VARCHAR" length="18" decimals="6" allownull="true" iskey="false" comment="批量销售折扣额"/>
+          <field id="db@plt_tebu_order_item.PROMOTION_DISCOUNT_MONEY" code="PROMOTION_DISCOUNT_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="促销优惠折扣额"/>
+          <field id="db@plt_tebu_order_item.SINGLE_PROMOTION_MONEY" code="SINGLE_PROMOTION_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="单品促销优惠折扣额"/>
+          <field id="db@plt_tebu_order_item.TOTAL_PROMOTION_MONEY" code="TOTAL_PROMOTION_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="整单促销优惠折扣额"/>
+          <field id="db@plt_tebu_order_item.SINGLE_REDUCE_MONEY" code="SINGLE_REDUCE_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="单品折让额"/>
+          <field id="db@plt_tebu_order_item.DEVIDE_REDUCE_MONEY" code="DEVIDE_REDUCE_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="整单折让分摊额"/>
+          <field id="db@plt_tebu_order_item.MONEY_DIFFER" code="MONEY_DIFFER" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="收银损溢"/>
+          <field id="db@plt_tebu_order_item.RECEIVABLE_MONEY" code="RECEIVABLE_MONEY" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="应收金额"/>
+          <field id="db@plt_tebu_order_item.GET_POINT" code="GET_POINT" type="DECIMAL" length="18" decimals="6" allownull="true" iskey="false" comment="获得积分"/>
+          <field id="db@plt_tebu_order_item.SALE_TYPE" code="SALE_TYPE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="SALE_TYPE"/>
+          <field id="db@plt_tebu_order_item.SALE_FLG" code="SALE_FLG" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="SALE_FLG"/>
+          <field id="db@plt_tebu_order_item.RET_REASON_ID" code="RET_REASON_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="退货原因ID"/>
+          <field id="db@plt_tebu_order_item.RET_REASON_NAME" code="RET_REASON_NAME" type="VARCHAR" length="100" decimals="0" allownull="true" iskey="false" comment="退货原因名称"/>
+          <field id="db@plt_tebu_order_item.MODIFY_TIME" code="MODIFY_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最后修改时间"/>
+          <field id="db@plt_tebu_order_item.PRODUCT_SEASON" code="PRODUCT_SEASON" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="产品季"/>
+          <field id="db@plt_tebu_order_item.SOURCE_DETAIL_ID" code="SOURCE_DETAIL_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="来源单明细ID"/>
+          <field id="db@plt_tebu_order_item.UD_TICKET_LINE_NUM" code="UD_TICKET_LINE_NUM" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="销售小票明细行号"/>
+        </fields>
+      </table>
+      <table id="db@plt_tebu_shop" code="plt_tebu_shop" comment="特步店铺表">
+        <fields>
+          <field id="db@plt_tebu_shop.门店ID" code="门店ID" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="true" comment="SHOP_ID"/>
+          <field id="db@plt_tebu_shop.SHOP_CODE" code="SHOP_CODE" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="门店编码"/>
+          <field id="db@plt_tebu_shop.ORG_ID" code="ORG_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="机构ID"/>
+          <field id="db@plt_tebu_shop.ORG_NAME" code="ORG_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="机构名称"/>
+          <field id="db@plt_tebu_shop.CUSTOMER_ID" code="CUSTOMER_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="客户ID"/>
+          <field id="db@plt_tebu_shop.CUSTOMER_NAME" code="CUSTOMER_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="客户名称"/>
+          <field id="db@plt_tebu_shop.DEPT_ID" code="DEPT_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="部门ID"/>
+          <field id="db@plt_tebu_shop.DEPT_NAME" code="DEPT_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="部门名称"/>
+          <field id="db@plt_tebu_shop.AREA_ID" code="AREA_ID" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="地区ID"/>
+          <field id="db@plt_tebu_shop.AREA_NAME" code="AREA_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="地区名称"/>
+          <field id="db@plt_tebu_shop.SHOP_LEVEL" code="SHOP_LEVEL" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="门店级别"/>
+          <field id="db@plt_tebu_shop.SHOP_NAME" code="SHOP_NAME" type="VARCHAR" length="200" decimals="0" allownull="true" iskey="false" comment="门店名称"/>
+          <field id="db@plt_tebu_shop.SHOP_TYPE" code="SHOP_TYPE" type="VARCHAR" length="32" decimals="0" allownull="true" iskey="false" comment="门店类型"/>
+          <field id="db@plt_tebu_shop.MODIFY_TIME" code="MODIFY_TIME" type="DATETIME" length="0" decimals="0" allownull="true" iskey="false" comment="最后修改时间"/>
+          <field id="db@plt_tebu_shop.IS_DEL" code="IS_DEL" type="INT" length="0" decimals="0" allownull="true" iskey="false" comment="是否停用"/>
+        </fields>
+      </table>
+    </tables>
+  </database>
+  <functions>
+    <function id="model@function_tebu_年龄" returnDataType="int(3)" paramJson="[&quot;birthday&quot;]" expression="YEAR (now()) - ##birthday + 1"/>
+    <function id="model@function_tebu_当前日期" returnDataType="datetime" paramJson="]" expression="from_unixtime(unix_timestamp(now()), &apos;yyyy-MM-dd HH:mm:ss&apos;)"/>
+    <function id="model@function_tebu_生日" returnDataType="varchar" paramJson="[&quot;modifyName&quot;]" expression="from_unixtime(unix_timestamp(##modifyName), &apos;MM-dd&apos;)"/>
+    <function id="model@function_tebu_购买次数" returnDataType="bigint" paramJson="[&quot;dp_id&quot;,&quot;customerno&quot;,&quot;create_time&quot;]" expression="count(distinct concat(##dp_id,##customerno,from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;)))"/>
+    <function id="model@function_tebu_购买订单数" returnDataType="bigint" paramJson="[&quot;tid&quot;]" expression="count(distinct ##tid)"/>
+    <function id="model@function_tebu_购买金额" returnDataType="decimal(12,2)" paramJson="[&quot;payment&quot;]" expression="sum(##payment)"/>
+    <function id="model@function_tebu_购买件数" returnDataType="bigint" paramJson="[&quot;num&quot;]" expression="sum(##num)"/>
+    <function id="model@function_tebu_最后一次购买时间" returnDataType="datetime" paramJson="[&quot;create_time&quot;]" expression="max(##create_time)"/>
+    <function id="model@function_tebu_最后一次购买金额" returnDataType="decimal(12,2)" paramJson="[&quot;create_time&quot;,&quot;payment&quot;]" expression="substr(max(concat(from_unixtime(unix_timestamp(##create_time), &apos;yyyy-MM-dd HH:mm:ss&apos;), &apos;|&apos;, ##payment)),instr(max(concat(from_unixtime(unix_timestamp(##create_time), &apos;yyyy-MM-dd HH:mm:ss&apos;), &apos;|&apos;, ##payment)),&apos;|&apos;)+1)"/>
+    <function id="model@function_tebu_最后一次购买间隔" returnDataType="bigint" paramJson="[&quot;create_time&quot;]" expression="fn_date_diff(&apos;day&apos;,max(##create_time),from_unixtime(unix_timestamp(now()),&apos;yyyy-MM-dd&apos;),1)"/>
+    <function id="model@function_tebu_第一次购买时间" returnDataType="datetime" paramJson="[&quot;create_time&quot;]" expression="min(##create_time)"/>
+    <function id="model@function_tebu_第一次购买金额" returnDataType="decimal(12,2)" paramJson="[&quot;create_time&quot;,&quot;payment&quot;]" expression="substr(min(concat(from_unixtime(unix_timestamp(##create_time), &apos;yyyy-MM-dd HH:mm:ss&apos;), &apos;|&apos;, ##payment)),instr(min(concat(from_unixtime(unix_timestamp(##create_time), &apos;yyyy-MM-dd HH:mm:ss&apos;), &apos;|&apos;, ##payment)),&apos;|&apos;)+1)"/>
+    <function id="model@function_tebu_第一次购买间隔" returnDataType="bigint" paramJson="[&quot;create_time&quot;]" expression="fn_date_diff(&apos;day&apos;,min(##create_time),from_unixtime(unix_timestamp(now()),&apos;yyyy-MM-dd&apos;),1)"/>
+    <function id="model@function_tebu_平均每次购买金额" returnDataType="decimal(12,2)" paramJson="[&quot;payment&quot;,&quot;dp_id&quot;,&quot;customerno&quot;,&quot;create_time&quot;]" expression="sum(##payment)/count(distinct concat(##dp_id,##customerno,from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;)))"/>
+    <function id="model@function_tebu_平均每次购买件数" returnDataType="bigint" paramJson="[&quot;num&quot;,&quot;dp_id&quot;,&quot;customerno&quot;,&quot;create_time&quot;]" expression="sum(##num)/count(distinct concat(##dp_id,##customerno,from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;)))"/>
+    <function id="model@function_tebu_平均每次购买间隔" returnDataType="bigint" paramJson="[&quot;create_time&quot;,&quot;dp_id&quot;,&quot;customerno&quot;]" expression="CEIL(fn_date_diff(&apos;day&apos;,max(##create_time),min(##create_time),2)/(count(distinct concat(##dp_id,##customerno, from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;))) -1))"/>
+    <function id="model@function_tebu_下单时间(天)" returnDataType="datetime" paramJson="[&quot;create_time&quot;]" expression="from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;)"/>
+    <function id="model@function_tebu_购买客人数" returnDataType="bigint" paramJson="[&quot;customerno&quot;]" expression="count(distinct ##customerno)"/>
+     <function id="model@function_tebu_平均每人购买次数" returnDataType="bigint" paramJson="[&quot;dp_id&quot;,&quot;customerno&quot;,&quot;create_time&quot;]" expression="count(distinct concat(##dp_id,##customerno,from_unixtime(unix_timestamp(##create_time),&apos;yyyy-MM-dd&apos;)))/count(distinct ##customerno)"/>
+    <function id="model@function_tebu_平均每人购买金额" returnDataType="decimal(12,2)" paramJson="[&quot;payment&quot;,&quot;customerno&quot;]" expression="sum(##num)/count(distinct ##customerno)"/>
+    <function id="model@function_tebu_平均每人购买件数" returnDataType="bigint" paramJson="[&quot;num&quot;,&quot;customerno&quot;]" expression="sum(##num)/count(distinct ##customerno)"/>
+     </functions>
+  <segmentation id="tebu" display="特步平台">
+    <subject id="特步客户" display="特步客户">
+      <attribute-collections>
+        <attribute-collection id="model@plt_tebu_customer" display="model@plt_tebu_customer" table="db@plt_tebu_customer" ismaster="true" refsubject="true">
+          <normal-attribute id="model@plt_tebu_customer.VIP_INFO_ID" display="会员id" field="db@plt_tebu_customer.VIP_INFO_ID" ismaster="true" refsubject="true"/>
+          <normal-attribute id="model@plt_tebu_customer.BIRTHDATE" display="生日" field="db@plt_tebu_customer.BIRTHDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MEMBERCODE" display="会员编码" field="db@plt_tebu_customer.MEMBERCODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MEMBERNAME" display="会员名称" field="db@plt_tebu_customer.MEMBERNAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MOBILEPHONE" display="手机号码" field="db@plt_tebu_customer.MOBILEPHONE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.REGISTERDATE" display="注册日期" field="db@plt_tebu_customer.REGISTERDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SEX" display="性别" field="db@plt_tebu_customer.SEX" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.TOTALPOINT" display="总积分" field="db@plt_tebu_customer.TOTALPOINT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.LEAVEPOINTS" display="剩余积分" field="db@plt_tebu_customer.LEAVEPOINTS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.TOTALMONEY" display="消费总额" field="db@plt_tebu_customer.TOTALMONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.STOREDEFINEID" display="注册门店ID" field="db@plt_tebu_customer.STOREDEFINEID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.STORENAME" display="注册门店名称" field="db@plt_tebu_customer.STORENAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.LEVELNAME" display="会员等级" field="db@plt_tebu_customer.LEVELNAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MEMBERSOURCECODE" display="会员来源编码" field="db@plt_tebu_customer.MEMBERSOURCECODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MEMBERSOURCENAME" display="会员来源名称" field="db@plt_tebu_customer.MEMBERSOURCENAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.PROVINCE" display="省份" field="db@plt_tebu_customer.PROVINCE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.CITY" display="城市" field="db@plt_tebu_customer.CITY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.REGION" display="区域" field="db@plt_tebu_customer.REGION" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.PROFESSION" display="职业" field="db@plt_tebu_customer.PROFESSION" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SALARY" display="收入水平" field="db@plt_tebu_customer.SALARY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.CERTIFICATETYPE" display="证件类型" field="db@plt_tebu_customer.CERTIFICATETYPE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.CERTIFICATECODE" display="证件号" field="db@plt_tebu_customer.CERTIFICATECODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.COATSIZE" display="上衣尺码" field="db@plt_tebu_customer.COATSIZE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SHOESSIZE" display="鞋的尺码" field="db@plt_tebu_customer.SHOESSIZE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.TROUSERSSIZE" display="下装尺码" field="db@plt_tebu_customer.TROUSERSSIZE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.INTERESTJOURNEY" display="是否爱好旅行" field="db@plt_tebu_customer.INTERESTJOURNEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.INTERESTMUSIC" display="是否爱好音乐" field="db@plt_tebu_customer.INTERESTMUSIC" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.INTERESTREAD" display="是否爱好阅读" field="db@plt_tebu_customer.INTERESTREAD" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTBASKETBALL" display="是否爱好篮球" field="db@plt_tebu_customer.SPORTBASKETBALL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTEXERCISE" display="是否爱好健身" field="db@plt_tebu_customer.SPORTEXERCISE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTFOOTBALL" display="是否爱好足球" field="db@plt_tebu_customer.SPORTFOOTBALL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTRUN" display="是否爱好跑步" field="db@plt_tebu_customer.SPORTRUN" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTTENNISBALL" display="是否爱好网球" field="db@plt_tebu_customer.SPORTTENNISBALL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SPORTTENNISBALL" display="是否爱好网球" field="db@plt_tebu_customer.SPORTTENNISBALL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.INTERESTORTHERSPORT" display="是否爱好其他运动" field="db@plt_tebu_customer.INTERESTORTHERSPORT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.INTERESTOTHER" display="其他爱好" field="db@plt_tebu_customer.INTERESTOTHER" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.CREATE_TIME" display="创建时间" field="db@plt_tebu_customer.CREATE_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MODIFY_TIME" display="最后修改时间" field="db@plt_tebu_customer.MODIFY_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.IS_NEW" display="是否新会员" field="db@plt_tebu_customer.IS_NEW" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.FIRSTSALEDATE" display="首次购买时间" field="db@plt_tebu_customer.FIRSTSALEDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.LASTSALEDATE" display="最近一次购买日期" field="db@plt_tebu_customer.LASTSALEDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.POINTCHANGEDATE" display="积分变更日期" field="db@plt_tebu_customer.POINTCHANGEDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SALECOUNT" display="购买次数" field="db@plt_tebu_customer.SALECOUNT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.STATUS" display="状态" field="db@plt_tebu_customer.STATUS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.EMAIL" display="电子邮箱" field="db@plt_tebu_customer.EMAIL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.WECHAT" display="微信号" field="db@plt_tebu_customer.WECHAT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.LEVELCODE" display="会员级别编码" field="db@plt_tebu_customer.LEVELCODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.ADDRESS" display="地址" field="db@plt_tebu_customer.ADDRESS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SHOPCODE" display="注册门店编码" field="db@plt_tebu_customer.SHOPCODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SHOPNAME" display="注册门店名称1" field="db@plt_tebu_customer.SHOPNAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.SHOP_ID" display="门店ID" field="db@plt_tebu_customer.SHOP_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.TAOBAONICK" display="淘宝账号" field="db@plt_tebu_customer.TAOBAONICK" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.ISBINDTMALL" display="是否绑定淘宝" field="db@plt_tebu_customer.ISBINDTMALL" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.WXUNIONID" display="微信UNID" field="db@plt_tebu_customer.WXUNIONID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_customer.MACID" display="设备MACID" field="db@plt_tebu_customer.MACID" ismaster="false" refsubject="false"/>
+        </attribute-collection>
+      </attribute-collections>
+      <function-attributes>
+        <function-attribute id="model@fun_特步客户_年龄" display="特步客户_年龄" function="model@function_tebu_年龄">
+          <param name="birthday" attribute-type="nomal" attribute="model@plt_tebu_customer.BIRTHDATE"/>
+        </function-attribute>
+        <function-attribute id="model@fun_特步客户_生日" display="特步客户_生日" function="model@function_tebu_生日">
+          <param name="modifyName" attribute-type="nomal" attribute="model@plt_tebu_customer.BIRTHDATE"/>
+        </function-attribute>
+        <function-attribute id="model@fun_特步客户_客户总人数" display="特步客户_客户总人数" function="model@function_tebu_购买客人数">
+          <param name="customerno" attribute-type="nomal" attribute="model@plt_tebu_customer.VIP_INFO_ID"/>
+        </function-attribute>
+      </function-attributes>
+      <subjectdoc id="特步客户" dispalyname="特步客户" mainAttribute="model@plt_tebu_customer.MEMBERCODE">
+                <metasSubjectBehaviors>
+                    <metasSubjectBehavior attribute="model@plt_tebu_order.VIP_CARD_NO" behaviorSubjectId="特步订单" />
+                </metasSubjectBehaviors>
+                <attributerefs>
+                    <attributeRef refmodel="model@plt_tebu_customer.MEMBERCODE" display="特步客户_客户ID" />
+                </attributerefs>
+            </subjectdoc>
+    </subject>
+    <subject id="特步商品" display="特步商品">
+      <attribute-collections>
+        <attribute-collection id="model@plt_tebu_product" display="model@plt_tebu_product" table="db@plt_tebu_product" ismaster="true" refsubject="true">
+          <normal-attribute id="model@plt_tebu_product.ITEM_ID" display="商品ID" field="db@plt_tebu_product.ITEM_ID" ismaster="true" refsubject="true"/>
+          <normal-attribute id="model@plt_tebu_product.ITEM_CODE" display="商品编码" field="db@plt_tebu_product.ITEM_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.ITEM_NAME" display="商品名称" field="db@plt_tebu_product.ITEM_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.BRAND_ID" display="品牌ID" field="db@plt_tebu_product.BRAND_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.BRAND_NAME" display="品牌名称" field="db@plt_tebu_product.BRAND_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.TOP_ITEMTYPE_ID" display="商品大类ID" field="db@plt_tebu_product.TOP_ITEMTYPE_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.TOP_ITEMTYPE_CODE" display="商品大类编码" field="db@plt_tebu_product.TOP_ITEMTYPE_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.TOP_ITEMTYPE_NAME" display="商品大类名称" field="db@plt_tebu_product.TOP_ITEMTYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.ITEMTYPE_ID" display="商品类别ID" field="db@plt_tebu_product.ITEMTYPE_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.ITEMTYPE_CODE" display="商品类别编码" field="db@plt_tebu_product.ITEMTYPE_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.ITEMTYPE_NAME" display="商品类别名称" field="db@plt_tebu_product.ITEMTYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.UNIT_NAME" display="计量单位名称" field="db@plt_tebu_product.UNIT_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.PRODUCT_SEASON" display="产品季" field="db@plt_tebu_product.PRODUCT_SEASON" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.SEASON" display="季节" field="db@plt_tebu_product.SEASON" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.YEAR" display="年份" field="db@plt_tebu_product.YEAR" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.SERIES_NAME" display="系列" field="db@plt_tebu_product.SERIES_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.MATERIAL_NAME" display="材质" field="db@plt_tebu_product.MATERIAL_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.UP_DOWN_NAME" display="上下装" field="db@plt_tebu_product.UP_DOWN_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.GETTYPE_NAME" display="领型" field="db@plt_tebu_product.GETTYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.MARDATE" display="上市日期" field="db@plt_tebu_product.MARDATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.THEME_NAME" display="主题" field="db@plt_tebu_product.THEME_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.SEX_NAME" display="性别" field="db@plt_tebu_product.SEX_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.CLOTH_TYPE_NAME" display="面(布)种" field="db@plt_tebu_product.CLOTH_TYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.COMMEND_NAME" display="推广级别" field="db@plt_tebu_product.COMMEND_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.IS_SALE" display="是否销售" field="db@plt_tebu_product.IS_SALE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.LABEL_PRICE" display="吊牌价" field="db@plt_tebu_product.LABEL_PRICE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.CREATE_TIME" display="创建时间" field="db@plt_tebu_product.CREATE_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.MODIFY_TIME" display="最后修改时间" field="db@plt_tebu_product.MODIFY_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_product.IS_DEL" display="是否停用" field="db@plt_tebu_product.IS_DEL" ismaster="false" refsubject="false"/>
+        </attribute-collection>
+      </attribute-collections>
+       <subjectdoc id="特步商品" dispalyname="特步商品" mainAttribute="model@plt_tebu_product.ITEM_ID">
+                <metasSubjectBehaviors>
+                    <metasSubjectBehavior attribute="model@plt_tebu_order_item.ITEM_ID" behaviorSubjectId="特步订单" />
+                </metasSubjectBehaviors>
+                <attributerefs>
+                    <attributeRef refmodel="model@plt_tebu_product.ITEM_ID" display="特步商品_商品ID" />
+                </attributerefs>
+        </subjectdoc>
+    </subject>
+    <subject id="特步订单" display="特步订单">
+      <attribute-collections>
+        <attribute-collection id="model@plt_tebu_order" display="model@plt_tebu_order" table="db@plt_tebu_order" ismaster="true" refsubject="true">
+          <normal-attribute id="model@plt_tebu_order.UD_TICKET_ID" display="商品销售主表ID" field="db@plt_tebu_order.UD_TICKET_ID" ismaster="true" refsubject="true"/>
+          <normal-attribute id="model@plt_tebu_order.ORG_ID" display="机构ID" field="db@plt_tebu_order.ORG_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.BILL_TYPE" display="单据类别" field="db@plt_tebu_order.BILL_TYPE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.TICKET_NO" display="单据编号" field="db@plt_tebu_order.TICKET_NO" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.REPORT_DATE" display="销售时间" field="db@plt_tebu_order.REPORT_DATE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.SHOP_ID" display="门店ID" field="db@plt_tebu_order.SHOP_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.SHOP_CODE" display="门店编码" field="db@plt_tebu_order.SHOP_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.SHOP_NAME" display="门店名称" field="db@plt_tebu_order.SHOP_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.BILL_STATUS" display="单据状态" field="db@plt_tebu_order.BILL_STATUS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.TOTAL_COUNT" display="数量合计" field="db@plt_tebu_order.TOTAL_COUNT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.TOTAL_MONEY" display="商品总金额" field="db@plt_tebu_order.TOTAL_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.TOTAL_DISCOUNT_MONEY" display="总折扣额" field="db@plt_tebu_order.TOTAL_DISCOUNT_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.RECEIVABLE_MONEY" display="应收金额" field="db@plt_tebu_order.RECEIVABLE_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.ACTUAl_MONEY" display="实收金额" field="db@plt_tebu_order.ACTUAl_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.VIP_LEVEL" display="VIP卡级别" field="db@plt_tebu_order.VIP_LEVEL" ismaster="false" refsubject="false"/>
+		  <normal-attribute id="model@plt_tebu_order.VIP_CARD_NO" display="VIP卡号" field="db@plt_tebu_order.VIP_CARD_NO" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.CASH_RMB_MONEY" display="人民币金额" field="db@plt_tebu_order.CASH_RMB_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.BANK_CARD_MONEY" display="刷卡金额" field="db@plt_tebu_order.BANK_CARD_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.CASH_COUPON_MONEY" display="代金券金额" field="db@plt_tebu_order.CASH_COUPON_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.THIRD_PARTY_MONEY" display="第三方金额" field="db@plt_tebu_order.THIRD_PARTY_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.FACETOFACE_MONEY" display="当面付金额" field="db@plt_tebu_order.FACETOFACE_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.STORED_VALUE_CARD_MONEY" display="储值卡金额" field="db@plt_tebu_order.STORED_VALUE_CARD_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.POINTS_MONEY" display="积分金额" field="db@plt_tebu_order.POINTS_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.OUT_POINTS" display="消费积分" field="db@plt_tebu_order.OUT_POINTS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.IN_POINTS" display="累计积分" field="db@plt_tebu_order.IN_POINTS" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order.MODIFY_TIME" display="最后修改时间" field="db@plt_tebu_order.MODIFY_TIME" ismaster="false" refsubject="false"/>
+        </attribute-collection>
+        <attribute-collection id="model@plt_tebu_order_item" display="model@plt_tebu_order_item" table="db@plt_tebu_order_item" ismaster="true" refsubject="true">
+          <normal-attribute id="model@plt_tebu_order_item.UD_TICKET_LINE_ID" display="商品销售明细表ID" field="db@plt_tebu_order_item.UD_TICKET_LINE_ID" ismaster="true" refsubject="true"/>
+          <normal-attribute id="model@plt_tebu_order_item.UD_TICKET_ID" display="商品销售主表ID" field="db@plt_tebu_order_item.UD_TICKET_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.TICKET_ID" display="小票ID" field="db@plt_tebu_order_item.TICKET_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.OLD_TICKET_ID" display="原小票ID" field="db@plt_tebu_order_item.OLD_TICKET_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.OLD_UD_TICKET_LINE_ID" display="原小票明细ID" field="db@plt_tebu_order_item.OLD_UD_TICKET_LINE_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SOURCE_TYPE" display="来源单据类型" field="db@plt_tebu_order_item.SOURCE_TYPE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SOURCE_NO" display="来源单据号" field="db@plt_tebu_order_item.SOURCE_NO" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SHOP_CODE" display="门店编码" field="db@plt_tebu_order_item.SHOP_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SHOP_NAME" display="门店名称" field="db@plt_tebu_order_item.SHOP_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SHOP_ID" display="门店ID" field="db@plt_tebu_order_item.SHOP_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SALE_TIME" display="销售时间" field="db@plt_tebu_order_item.SALE_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.DESCRIPTION" display="描述" field="db@plt_tebu_order_item.DESCRIPTION" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.ITEM_ID" display="商品ID" field="db@plt_tebu_order_item.ITEM_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.ITEM_CODE" display="商品编码" field="db@plt_tebu_order_item.ITEM_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.BAR_CODE" display="商品条码" field="db@plt_tebu_order_item.BAR_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.ITEM_NAME" display="商品名称" field="db@plt_tebu_order_item.ITEM_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.COLOR_CODE" display="颜色编码" field="db@plt_tebu_order_item.COLOR_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.COLOR_NAME" display="颜色名称" field="db@plt_tebu_order_item.COLOR_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SIZE_CODE" display="尺码编码" field="db@plt_tebu_order_item.SIZE_CODE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SIZE_NAME" display="尺码名称" field="db@plt_tebu_order_item.SIZE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.TOP_ITEMTYPE_ID" display="商品大类ID" field="db@plt_tebu_order_item.TOP_ITEMTYPE_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.TOP_ITEMTYPE_NAME" display="商品大类名称" field="db@plt_tebu_order_item.TOP_ITEMTYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.ITEMTYPE_ID" display="商品类别ID" field="db@plt_tebu_order_item.ITEMTYPE_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.ITEMTYPE_NAME" display="商品类别名称" field="db@plt_tebu_order_item.ITEMTYPE_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.LABEL_PRICE" display="吊牌价" field="db@plt_tebu_order_item.LABEL_PRICE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.QUANTITY" display="商品数量" field="db@plt_tebu_order_item.QUANTITY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.MONEY" display="金额" field="db@plt_tebu_order_item.MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.RET_QUANTITY" display="退货数量" field="db@plt_tebu_order_item.RET_QUANTITY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.RET_MONEY" display="退货金额" field="db@plt_tebu_order_item.RET_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.REAL_UNIT_PRICE" display="实际零售价格" field="db@plt_tebu_order_item.REAL_UNIT_PRICE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.REAL_MONEY" display="实际零售金额" field="db@plt_tebu_order_item.REAL_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.NON_VIP_DISCOUNT_MONEY" display="非会员常规折扣额" field="db@plt_tebu_order_item.NON_VIP_DISCOUNT_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.VIP_DISCOUNT_MONEY" display="会员常规折扣额" field="db@plt_tebu_order_item.VIP_DISCOUNT_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.PACKAGE_DISCOUNT_MONEY" display="批量销售折扣额" field="db@plt_tebu_order_item.PACKAGE_DISCOUNT_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.PROMOTION_DISCOUNT_MONEY" display="促销优惠折扣额" field="db@plt_tebu_order_item.PROMOTION_DISCOUNT_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SINGLE_PROMOTION_MONEY" display="单品促销优惠折扣额" field="db@plt_tebu_order_item.SINGLE_PROMOTION_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.TOTAL_PROMOTION_MONEY" display="整单促销优惠折扣额" field="db@plt_tebu_order_item.TOTAL_PROMOTION_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SINGLE_REDUCE_MONEY" display="单品折让额" field="db@plt_tebu_order_item.SINGLE_REDUCE_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.DEVIDE_REDUCE_MONEY" display="整单折让分摊额" field="db@plt_tebu_order_item.DEVIDE_REDUCE_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.MONEY_DIFFER" display="收银损溢" field="db@plt_tebu_order_item.MONEY_DIFFER" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.RECEIVABLE_MONEY" display="应收金额" field="db@plt_tebu_order_item.RECEIVABLE_MONEY" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.GET_POINT" display="获得积分" field="db@plt_tebu_order_item.GET_POINT" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SALE_TYPE" display="SALE_TYPE" field="db@plt_tebu_order_item.SALE_TYPE" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SALE_FLG" display="SALE_FLG" field="db@plt_tebu_order_item.SALE_FLG" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.RET_REASON_ID" display="退货原因ID" field="db@plt_tebu_order_item.RET_REASON_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.RET_REASON_NAME" display="退货原因名称" field="db@plt_tebu_order_item.RET_REASON_NAME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.MODIFY_TIME" display="最后修改时间" field="db@plt_tebu_order_item.MODIFY_TIME" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.PRODUCT_SEASON" display="产品季" field="db@plt_tebu_order_item.PRODUCT_SEASON" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.SOURCE_DETAIL_ID" display="来源单明细ID" field="db@plt_tebu_order_item.SOURCE_DETAIL_ID" ismaster="false" refsubject="false"/>
+          <normal-attribute id="model@plt_tebu_order_item.UD_TICKET_LINE_NUM" display="销售小票明细行号" field="db@plt_tebu_order_item.UD_TICKET_LINE_NUM" ismaster="false" refsubject="false"/>
+        </attribute-collection>
+      </attribute-collections>
+      <function-attributes>
+        <function-attribute id="model@fun_特步订单_下单时间_天" display="特步订单_下单时间_天" function="model@function_tebu_下单时间(天)">
+          <param name="create_time" attribute-type="nomal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </function-attribute>
+      </function-attributes>
+   
+      <dynamic-attributes>
+        <dynamic-attribute id="model@_dynamic_特步订单_实付金额" dispaly="特步订单_实付金额" default-attribute="model@plt_tebu_order.ACTUAl_MONEY" attribute-type="normal">
+          <dynamic param-attribute-collection="model@plt_tebu_order_item" attribute-type="normal" attribute="model@plt_tebu_order_item.REAL_MONEY"/>
+        </dynamic-attribute>
+        <dynamic-attribute id="model@_dynamic_特步订单_购买件数" dispaly="特步订单_购买件数" default-attribute="model@plt_tebu_order.TOTAL_COUNT" attribute-type="normal">
+          <dynamic param-attribute-collection="model@plt_tebu_order_item" attribute-type="normal" attribute="model@plt_tebu_order_item.QUANTITY"/>
+        </dynamic-attribute>
+        <dynamic-attribute id="model@_dynamic_特步订单_订单编号" dispaly="特步订单_订单编号" default-attribute="model@plt_tebu_order.UD_TICKET_ID" attribute-type="normal">
+          <dynamic param-attribute-collection="model@plt_tebu_order_item" attribute-type="normal" attribute="model@plt_tebu_order_item.UD_TICKET_ID"/>
+        </dynamic-attribute>
+      </dynamic-attributes>
+      <quota-attributes>
+        <quota-attribute id="model@tebu_quota_购买次数" display="购买次数" function="model@function_tebu_购买次数" group-subject="特步客户">
+          <param name="dp_id" attribute-type="normal" attribute="model@plt_tebu_order.SHOP_ID"/>
+          <param name="customerno" attribute-type="normal" attribute="model@plt_tebu_order.VIP_CARD_NO"/>
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_购买订单数" display="购买订单数" function="model@function_tebu_购买订单数" group-subject="特步客户">
+          <param name="tid" attribute-type="normal" attribute="model@plt_tebu_order.UD_TICKET_ID"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_购买金额" display="购买金额" function="model@function_tebu_购买金额" group-subject="特步客户">
+          <param name="payment" attribute-type="dynamic" attribute="model@_dynamic_特步订单_实付金额"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_购买件数" display="购买件数" function="model@function_tebu_购买件数" group-subject="特步客户">
+          <param name="num" attribute-type="dynamic" attribute="model@_dynamic_特步订单_购买件数"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_最后一次购买时间" display="最后一次购买时间" function="model@function_tebu_最后一次购买时间" group-subject="特步客户">
+          <param name="birthday" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_最后一次购买间隔" display="最后一次购买间隔" function="model@function_tebu_最后一次购买间隔" group-subject="特步客户">
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_第一次购买时间" display="第一次购买时间" function="model@function_tebu_第一次购买时间" group-subject="特步客户">
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_第一次购买间隔" display="第一次购买间隔" function="model@function_tebu_第一次购买间隔" group-subject="特步客户">
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_平均每次购买金额" display="平均每次购买金额" function="model@function_tebu_平均每次购买金额" group-subject="特步客户">
+          <param name="payment" attribute-type="dynamic" attribute="model@_dynamic_特步订单_实付金额"/>
+          <param name="dp_id" attribute-type="normal" attribute="model@plt_tebu_order.SHOP_ID"/>
+          <param name="customerno" attribute-type="normal" attribute="model@plt_tebu_order.VIP_CARD_NO"/>
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_product.CREATE_TIME"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_平均每次购买件数" display="平均每次购买件数" function="model@function_tebu_平均每次购买件数" group-subject="特步客户">
+          <param name="num" attribute-type="normal" attribute="model@plt_tebu_order.TOTAL_COUNT"/>
+          <param name="dp_id" attribute-type="normal" attribute="model@plt_tebu_order.SHOP_ID"/>
+          <param name="customerno" attribute-type="normal" attribute="model@plt_tebu_order.VIP_CARD_NO"/>
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+        </quota-attribute>
+        <quota-attribute id="model@tebu_quota_平均每次购买间隔" display="平均每次购买间隔" function="model@function_tebu_平均每次购买间隔" group-subject="特步客户">
+          <param name="create_time" attribute-type="normal" attribute="model@plt_tebu_order.REPORT_DATE"/>
+          <param name="dp_id" attribute-type="normal" attribute="model@plt_tebu_order.SHOP_ID"/>
+          <param name="customerno" attribute-type="normal" attribute="model@plt_tebu_order.VIP_CARD_NO"/>
+        </quota-attribute>
+      </quota-attributes>
+	      <subjectdoc id="特步订单" dispalyname="特步订单" mainAttribute="model@plt_tebu_order.UD_TICKET_ID">
+                <attributerefs>
+                    <attributeRef refmodel="model@plt_tebu_order.UD_TICKET_ID" display="特步订单_订单号" />
+                    <attributeRef refmodel="model@plt_tebu_order_item.UD_TICKET_ID" display="特步订单_订单编号" />
+                    <attributeRef refmodel="model@plt_tebu_order_item.ITEM_ID" display="特步订单_商品编号" />
+                </attributerefs>
+            </subjectdoc>
+			 <metasSubjectScopeDocs>
+                <metasSubjectScopeDoc id="特步订单_特步商品" subjectName="特步订单" referedSubjectName="特步商品">
+                    <metasSubjectRoutes>
+                        <metasSubjectRoute routeSubjectName="特步商品" routeOrder="1" subjectType="entity" />
+                        <metasSubjectRoute routeSubjectName="特步订单" routeOrder="2" subjectType="fact" />
+                    </metasSubjectRoutes>
+                </metasSubjectScopeDoc>
+            </metasSubjectScopeDocs>
+    </subject>
+  </segmentation>
+  <queryitems>
+    <queryitem id="queryitem@plt_tebu_customer.VIP_INFO_ID" display="会员id" attribute="model@plt_tebu_customer.VIP_INFO_ID" attribute-type="普通属性" query-type="字符输入" order="0" compute-by-result="false" tips="">
+     <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+  
+    <queryitem id="queryitem@plt_tebu_customer.BIRTHDATE" display="生日" attribute="model@plt_tebu_customer.BIRTHDATE" attribute-type="普通属性" query-type="时间选择" order="1" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MEMBERCODE" display="会员编码" attribute="model@plt_tebu_customer.MEMBERCODE" attribute-type="普通属性" query-type="字符输入" order="2" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MOBILEPHONE" display="手机号码" attribute="model@plt_tebu_customer.MOBILEPHONE" attribute-type="普通属性" query-type="字符输入" order="3" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.REGISTERDATE" display="注册日期" attribute="model@plt_tebu_customer.REGISTERDATE" attribute-type="普通属性" query-type="时间选择" order="4" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SEX" display="性别" attribute="model@plt_tebu_customer.SEX" attribute-type="普通属性" query-type="字符输入" order="5" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.STORENAME" display="注册门店名称" attribute="model@plt_tebu_customer.STORENAME" attribute-type="普通属性" query-type="字符输入" order="6" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.LEVELNAME" display="会员等级" attribute="model@plt_tebu_customer.LEVELNAME" attribute-type="普通属性" query-type="字符输入" order="7" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MEMBERSOURCECODE" display="会员来源编码" attribute="model@plt_tebu_customer.MEMBERSOURCECODE" attribute-type="普通属性" query-type="字符输入" order="8" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MEMBERSOURCENAME" display="会员来源名称" attribute="model@plt_tebu_customer.MEMBERSOURCENAME" attribute-type="普通属性" query-type="字符输入" order="9" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.PROVINCE" display="省份" attribute="model@plt_tebu_customer.PROVINCE" attribute-type="普通属性" query-type="字符输入" order="10" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.CITY" display="城市" attribute="model@plt_tebu_customer.CITY" attribute-type="普通属性" query-type="字符输入" order="11" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.REGION" display="区域" attribute="model@plt_tebu_customer.REGION" attribute-type="普通属性" query-type="字符输入" order="12" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.PROFESSION" display="职业" attribute="model@plt_tebu_customer.PROFESSION" attribute-type="普通属性" query-type="字符输入" order="13" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SALARY" display="收入水平" attribute="model@plt_tebu_customer.SALARY" attribute-type="普通属性" query-type="字符输入" order="14" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.CERTIFICATETYPE" display="证件类型" attribute="model@plt_tebu_customer.CERTIFICATETYPE" attribute-type="普通属性" query-type="字符输入" order="15" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.CERTIFICATECODE" display="证件号" attribute="model@plt_tebu_customer.CERTIFICATECODE" attribute-type="普通属性" query-type="字符输入" order="16" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.COATSIZE" display="上衣尺码" attribute="model@plt_tebu_customer.COATSIZE" attribute-type="普通属性" query-type="字符输入" order="17" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SHOESSIZE" display="鞋的尺码" attribute="model@plt_tebu_customer.SHOESSIZE" attribute-type="普通属性" query-type="字符输入" order="18" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.TROUSERSSIZE" display="下装尺码" attribute="model@plt_tebu_customer.TROUSERSSIZE" attribute-type="普通属性" query-type="字符输入" order="19" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.CREATE_TIME" display="创建时间" attribute="model@plt_tebu_customer.CREATE_TIME" attribute-type="普通属性" query-type="时间选择" order="20" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.INTERESTREAD" display="是否爱好阅读" attribute="model@plt_tebu_customer.INTERESTREAD" attribute-type="普通属性" query-type="数字输入" order="21" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SPORTBASKETBALL" display="是否爱好篮球" attribute="model@plt_tebu_customer.SPORTBASKETBALL" attribute-type="普通属性" query-type="数字输入" order="22" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SPORTEXERCISE" display="是否爱好健身" attribute="model@plt_tebu_customer.SPORTEXERCISE" attribute-type="普通属性" query-type="数字输入" order="23" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SPORTFOOTBALL" display="是否爱好足球" attribute="model@plt_tebu_customer.SPORTFOOTBALL" attribute-type="普通属性" query-type="数字输入" order="24" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SPORTRUN" display="是否爱好跑步" attribute="model@plt_tebu_customer.SPORTRUN" attribute-type="普通属性" query-type="数字输入" order="25" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SPORTTENNISBALL" display="是否爱好网球" attribute="model@plt_tebu_customer.SPORTTENNISBALL" attribute-type="普通属性" query-type="数字输入" order="26" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.INTERESTORTHERSPORT" display="是否爱好其他运动" attribute="model@plt_tebu_customer.INTERESTORTHERSPORT" attribute-type="普通属性" query-type="数字输入" order="27" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.INTERESTOTHER" display="其他爱好" attribute="model@plt_tebu_customer.INTERESTOTHER" attribute-type="普通属性" query-type="数字输入" order="28" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MODIFY_TIME" display="最后修改时间" attribute="model@plt_tebu_customer.MODIFY_TIME" attribute-type="普通属性" query-type="时间选择" order="29" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.IS_NEW" display="是否新会员" attribute="model@plt_tebu_customer.IS_NEW" attribute-type="普通属性" query-type="数字输入" order="30" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.FIRSTSALEDATE" display="首次购买时间" attribute="model@plt_tebu_customer.FIRSTSALEDATE" attribute-type="普通属性" query-type="时间选择" order="31" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.LASTSALEDATE" display="最近一次购买日期" attribute="model@plt_tebu_customer.LASTSALEDATE" attribute-type="普通属性" query-type="时间选择" order="32" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.POINTCHANGEDATE" display="积分变更日期" attribute="model@plt_tebu_customer.POINTCHANGEDATE" attribute-type="普通属性" query-type="时间选择" order="33" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SALECOUNT" display="购买次数" attribute="model@plt_tebu_customer.SALECOUNT" attribute-type="普通属性" query-type="数字输入" order="34" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.STATUS" display="状态" attribute="model@plt_tebu_customer.STATUS" attribute-type="普通属性" query-type="数字输入" order="35" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.EMAIL" display="电子邮箱" attribute="model@plt_tebu_customer.EMAIL" attribute-type="普通属性" query-type="字符输入" order="36" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.WECHAT" display="微信号" attribute="model@plt_tebu_customer.WECHAT" attribute-type="普通属性" query-type="字符输入" order="37" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.LEVELCODE" display="会员级别编码" attribute="model@plt_tebu_customer.LEVELCODE" attribute-type="普通属性" query-type="字符输入" order="38" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.ADDRESS" display="地址" attribute="model@plt_tebu_customer.ADDRESS" attribute-type="普通属性" query-type="字符输入" order="39" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SHOPCODE" display="注册门店编码" attribute="model@plt_tebu_customer.SHOPCODE" attribute-type="普通属性" query-type="字符输入" order="40" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SHOPNAME" display="注册门店名称1" attribute="model@plt_tebu_customer.SHOPNAME" attribute-type="普通属性" query-type="字符输入" order="41" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.SHOP_ID" display="门店ID" attribute="model@plt_tebu_customer.SHOP_ID" attribute-type="普通属性" query-type="字符输入" order="42" compute-by-result="false" tips="">
+     <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.TAOBAONICK" display="淘宝账号" attribute="model@plt_tebu_customer.TAOBAONICK" attribute-type="普通属性" query-type="字符输入" order="43" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.ISBINDTMALL" display="是否绑定淘宝" attribute="model@plt_tebu_customer.ISBINDTMALL" attribute-type="普通属性" query-type="数字输入" order="44" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.WXUNIONID" display="微信UNID" attribute="model@plt_tebu_customer.WXUNIONID" attribute-type="普通属性" query-type="字符输入" order="45" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.MACID" display="设备MACID" attribute="model@plt_tebu_customer.MACID" attribute-type="普通属性" query-type="字符输入" order="46" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEM_ID" display="商品ID" attribute="model@plt_tebu_product.ITEM_ID" attribute-type="普通属性" query-type="数字输入" order="47" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEM_CODE" display="商品编码" attribute="model@plt_tebu_product.ITEM_CODE" attribute-type="普通属性" query-type="字符输入" order="48" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEM_NAME" display="商品名称" attribute="model@plt_tebu_product.ITEM_NAME" attribute-type="普通属性" query-type="字符输入" order="49" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.BRAND_ID" display="品牌ID" attribute="model@plt_tebu_product.BRAND_ID" attribute-type="普通属性" query-type="数字输入" order="50" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.BRAND_NAME" display="品牌名称" attribute="model@plt_tebu_product.BRAND_NAME" attribute-type="普通属性" query-type="字符输入" order="51" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.TOP_ITEMTYPE_ID" display="商品大类ID" attribute="model@plt_tebu_product.TOP_ITEMTYPE_ID" attribute-type="普通属性" query-type="数字输入" order="52" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.TOP_ITEMTYPE_CODE" display="商品大类编码" attribute="model@plt_tebu_product.TOP_ITEMTYPE_CODE" attribute-type="普通属性" query-type="字符输入" order="53" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.TOP_ITEMTYPE_NAME" display="商品大类名称" attribute="model@plt_tebu_product.TOP_ITEMTYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="54" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEMTYPE_CODE" display="商品类别编码" attribute="model@plt_tebu_product.ITEMTYPE_CODE" attribute-type="普通属性" query-type="字符输入" order="55" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEMTYPE_NAME" display="商品类别名称" attribute="model@plt_tebu_product.ITEMTYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="56" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.UNIT_NAME" display="计量单位名称" attribute="model@plt_tebu_product.UNIT_NAME" attribute-type="普通属性" query-type="字符输入" order="57" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.PRODUCT_SEASON" display="产品季" attribute="model@plt_tebu_product.PRODUCT_SEASON" attribute-type="普通属性" query-type="字符输入" order="58" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.SEASON" display="季节" attribute="model@plt_tebu_product.SEASON" attribute-type="普通属性" query-type="字符输入" order="59" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.YEAR" display="年份" attribute="model@plt_tebu_product.YEAR" attribute-type="普通属性" query-type="字符输入" order="60" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.ITEMTYPE_ID" display="商品类别ID" attribute="model@plt_tebu_product.ITEMTYPE_ID" attribute-type="普通属性" query-type="数字输入" order="61" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.SERIES_NAME" display="系列" attribute="model@plt_tebu_product.SERIES_NAME" attribute-type="普通属性" query-type="字符输入" order="62" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.MATERIAL_NAME" display="材质" attribute="model@plt_tebu_product.MATERIAL_NAME" attribute-type="普通属性" query-type="字符输入" order="63" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.UP_DOWN_NAME" display="上下装" attribute="model@plt_tebu_product.UP_DOWN_NAME" attribute-type="普通属性" query-type="字符输入" order="64" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.GETTYPE_NAME" display="领型" attribute="model@plt_tebu_product.GETTYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="65" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.MARDATE" display="上市日期" attribute="model@plt_tebu_product.MARDATE" attribute-type="普通属性" query-type="时间选择" order="66" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.THEME_NAME" display="主题" attribute="model@plt_tebu_product.THEME_NAME" attribute-type="普通属性" query-type="字符输入" order="67" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.SEX_NAME" display="性别" attribute="model@plt_tebu_product.SEX_NAME" attribute-type="普通属性" query-type="字符输入" order="68" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.CLOTH_TYPE_NAME" display="面(布)种" attribute="model@plt_tebu_product.CLOTH_TYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="69" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.COMMEND_NAME" display="推广级别" attribute="model@plt_tebu_product.COMMEND_NAME" attribute-type="普通属性" query-type="字符输入" order="70" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.IS_SALE" display="是否销售" attribute="model@plt_tebu_product.IS_SALE" attribute-type="普通属性" query-type="字符输入" order="71" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.LABEL_PRICE" display="吊牌价" attribute="model@plt_tebu_product.LABEL_PRICE" attribute-type="普通属性" query-type="字符输入" order="72" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.CREATE_TIME" display="创建时间" attribute="model@plt_tebu_product.CREATE_TIME" attribute-type="普通属性" query-type="时间选择" order="73" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.MODIFY_TIME" display="最后修改时间" attribute="model@plt_tebu_product.MODIFY_TIME" attribute-type="普通属性" query-type="时间选择" order="74" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_product.IS_DEL" display="是否停用" attribute="model@plt_tebu_product.IS_DEL" attribute-type="普通属性" query-type="数字输入" order="75" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.UD_TICKET_ID" display="商品销售主表ID" attribute="model@plt_tebu_order.UD_TICKET_ID" attribute-type="普通属性" query-type="数字输入" order="76" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.ORG_ID" display="机构ID" attribute="model@plt_tebu_order.ORG_ID" attribute-type="普通属性" query-type="数字输入" order="77" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.BILL_TYPE" display="单据类别" attribute="model@plt_tebu_order.BILL_TYPE" attribute-type="普通属性" query-type="字符输入" order="78" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.TICKET_NO" display="单据编号" attribute="model@plt_tebu_order.TICKET_NO" attribute-type="普通属性" query-type="字符输入" order="79" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.REPORT_DATE" display="销售时间" attribute="model@plt_tebu_order.REPORT_DATE" attribute-type="普通属性" query-type="时间选择" order="80" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.SHOP_ID" display="门店ID" attribute="model@plt_tebu_order.SHOP_ID" attribute-type="普通属性" query-type="数据选择器类型" order="81" compute-by-result="false" tips="">
+      
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.SHOP_CODE" display="门店编码" attribute="model@plt_tebu_order.SHOP_CODE" attribute-type="普通属性" query-type="字符输入" order="82" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.SHOP_NAME" display="门店名称" attribute="model@plt_tebu_order.SHOP_NAME" attribute-type="普通属性" query-type="字符输入" order="83" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.BILL_STATUS" display="单据状态" attribute="model@plt_tebu_order.BILL_STATUS" attribute-type="普通属性" query-type="字符输入" order="84" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.VIP_CARD_NO" display="VIP_CARD_NO" attribute="model@plt_tebu_order.VIP_CARD_NO" attribute-type="普通属性" query-type="字符输入" order="85" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.VIP_LEVEL" display="VIP卡级别" attribute="model@plt_tebu_order.VIP_LEVEL" attribute-type="普通属性" query-type="字符输入" order="86" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.CASH_RMB_MONEY" display="人民币金额" attribute="model@plt_tebu_order.CASH_RMB_MONEY" attribute-type="普通属性" query-type="数字输入" order="87" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,999999.99"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.BANK_CARD_MONEY" display="刷卡金额" attribute="model@plt_tebu_order.BANK_CARD_MONEY" attribute-type="普通属性" query-type="数字输入" order="88" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.CASH_COUPON_MONEY" display="代金券金额" attribute="model@plt_tebu_order.CASH_COUPON_MONEY" attribute-type="普通属性" query-type="数字输入" order="89" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.THIRD_PARTY_MONEY" display="第三方金额" attribute="model@plt_tebu_order.THIRD_PARTY_MONEY" attribute-type="普通属性" query-type="数字输入" order="90" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.FACETOFACE_MONEY" display="当面付金额" attribute="model@plt_tebu_order.FACETOFACE_MONEY" attribute-type="普通属性" query-type="数字输入" order="91" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.MODIFY_TIME" display="最后修改时间" attribute="model@plt_tebu_order.MODIFY_TIME" attribute-type="普通属性" query-type="时间选择" order="92" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.UD_TICKET_ID" display="商品销售主表ID" attribute="model@plt_tebu_order_item.UD_TICKET_ID" attribute-type="普通属性" query-type="数字输入" order="93" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,9999999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.TOTALPOINT" display="总积分" attribute="model@plt_tebu_customer.TOTALPOINT" attribute-type="普通属性" query-type="数字输入" order="94" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.LEAVEPOINTS" display="剩余积分" attribute="model@plt_tebu_customer.LEAVEPOINTS" attribute-type="普通属性" query-type="数字输入" order="95" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.TOTALMONEY" display="消费总额" attribute="model@plt_tebu_customer.TOTALMONEY" attribute-type="普通属性" query-type="数字输入" order="96" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.STOREDEFINEID" display="注册门店ID" attribute="model@plt_tebu_customer.STOREDEFINEID" attribute-type="普通属性" query-type="数字输入" order="97" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.INTERESTJOURNEY" display="是否爱好旅行" attribute="model@plt_tebu_customer.INTERESTJOURNEY" attribute-type="普通属性" query-type="数字输入" order="98" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_customer.INTERESTMUSIC" display="是否爱好音乐" attribute="model@plt_tebu_customer.INTERESTMUSIC" attribute-type="普通属性" query-type="数字输入" order="99" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.TOTAL_COUNT" display="数量合计" attribute="model@plt_tebu_order.TOTAL_COUNT" attribute-type="普通属性" query-type="数字输入" order="100" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.TOTAL_MONEY" display="商品总金额" attribute="model@plt_tebu_order.TOTAL_MONEY" attribute-type="普通属性" query-type="数字输入" order="101" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.TOTAL_DISCOUNT_MONEY" display="总折扣额" attribute="model@plt_tebu_order.TOTAL_DISCOUNT_MONEY" attribute-type="普通属性" query-type="数字输入" order="102" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.RECEIVABLE_MONEY" display="应收金额" attribute="model@plt_tebu_order.RECEIVABLE_MONEY" attribute-type="普通属性" query-type="数字输入" order="103" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.ACTUAl_MONEY" display="实收金额" attribute="model@plt_tebu_order.ACTUAl_MONEY" attribute-type="普通属性" query-type="数字输入" order="104" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.STORED_VALUE_CARD_MONEY" display="储值卡金额" attribute="model@plt_tebu_order.STORED_VALUE_CARD_MONEY" attribute-type="普通属性" query-type="数字输入" order="105" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.POINTS_MONEY" display="积分金额" attribute="model@plt_tebu_order.POINTS_MONEY" attribute-type="普通属性" query-type="数字输入" order="106" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,9999999999"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.OUT_POINTS" display="消费积分" attribute="model@plt_tebu_order.OUT_POINTS" attribute-type="普通属性" query-type="数字输入" order="107" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order.IN_POINTS" display="累计积分" attribute="model@plt_tebu_order.IN_POINTS" attribute-type="普通属性" query-type="数字输入" order="108" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.UD_TICKET_LINE_ID" display="商品销售明细表ID" attribute="model@plt_tebu_order_item.UD_TICKET_LINE_ID" attribute-type="普通属性" query-type="数字输入" order="109" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.TICKET_ID" display="小票ID" attribute="model@plt_tebu_order_item.TICKET_ID" attribute-type="普通属性" query-type="数字输入" order="110" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.OLD_TICKET_ID" display="原小票ID" attribute="model@plt_tebu_order_item.OLD_TICKET_ID" attribute-type="普通属性" query-type="字符输入" order="111" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.OLD_UD_TICKET_LINE_ID" display="原小票明细ID" attribute="model@plt_tebu_order_item.OLD_UD_TICKET_LINE_ID" attribute-type="普通属性" query-type="数字输入" order="112" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SOURCE_TYPE" display="来源单据类型" attribute="model@plt_tebu_order_item.SOURCE_TYPE" attribute-type="普通属性" query-type="字符输入" order="113" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SOURCE_NO" display="来源单据号" attribute="model@plt_tebu_order_item.SOURCE_NO" attribute-type="普通属性" query-type="字符输入" order="114" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SHOP_CODE" display="门店编码" attribute="model@plt_tebu_order_item.SHOP_CODE" attribute-type="普通属性" query-type="字符输入" order="115" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SHOP_NAME" display="门店名称" attribute="model@plt_tebu_order_item.SHOP_NAME" attribute-type="普通属性" query-type="字符输入" order="116" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SHOP_ID" display="门店ID" attribute="model@plt_tebu_order_item.SHOP_ID" attribute-type="普通属性" query-type="字符输入" order="117" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SALE_TIME" display="销售时间" attribute="model@plt_tebu_order_item.SALE_TIME" attribute-type="普通属性" query-type="时间选择" order="118" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.DESCRIPTION" display="描述" attribute="model@plt_tebu_order_item.DESCRIPTION" attribute-type="普通属性" query-type="字符输入" order="119" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="2000"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.ITEM_ID" display="商品ID" attribute="model@plt_tebu_order_item.ITEM_ID" attribute-type="普通属性" query-type="数字输入" order="120" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.ITEM_CODE" display="商品编码" attribute="model@plt_tebu_order_item.ITEM_CODE" attribute-type="普通属性" query-type="字符输入" order="121" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.BAR_CODE" display="商品条码" attribute="model@plt_tebu_order_item.BAR_CODE" attribute-type="普通属性" query-type="字符输入" order="122" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.ITEM_NAME" display="商品名称" attribute="model@plt_tebu_order_item.ITEM_NAME" attribute-type="普通属性" query-type="字符输入" order="123" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.COLOR_CODE" display="颜色编码" attribute="model@plt_tebu_order_item.COLOR_CODE" attribute-type="普通属性" query-type="字符输入" order="124" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.COLOR_NAME" display="颜色名称" attribute="model@plt_tebu_order_item.COLOR_NAME" attribute-type="普通属性" query-type="字符输入" order="125" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SIZE_CODE" display="尺码编码" attribute="model@plt_tebu_order_item.SIZE_CODE" attribute-type="普通属性" query-type="字符输入" order="126" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SIZE_NAME" display="尺码名称" attribute="model@plt_tebu_order_item.SIZE_NAME" attribute-type="普通属性" query-type="字符输入" order="127" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.TOP_ITEMTYPE_ID" display="商品大类ID" attribute="model@plt_tebu_order_item.TOP_ITEMTYPE_ID" attribute-type="普通属性" query-type="数字输入" order="128" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.ITEMTYPE_ID" display="商品类别ID" attribute="model@plt_tebu_order_item.ITEMTYPE_ID" attribute-type="普通属性" query-type="数字输入" order="129" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.TOP_ITEMTYPE_NAME" display="商品大类名称" attribute="model@plt_tebu_order_item.TOP_ITEMTYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="130" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.ITEMTYPE_NAME" display="商品类别名称" attribute="model@plt_tebu_order_item.ITEMTYPE_NAME" attribute-type="普通属性" query-type="字符输入" order="131" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.LABEL_PRICE" display="吊牌价" attribute="model@plt_tebu_order_item.LABEL_PRICE" attribute-type="普通属性" query-type="数字输入" order="132" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.QUANTITY" display="商品数量" attribute="model@plt_tebu_order_item.QUANTITY" attribute-type="普通属性" query-type="数字输入" order="133" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.MONEY" display="金额" attribute="model@plt_tebu_order_item.MONEY" attribute-type="普通属性" query-type="数字输入" order="134" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.RET_QUANTITY" display="退货数量" attribute="model@plt_tebu_order_item.RET_QUANTITY" attribute-type="普通属性" query-type="数字输入" order="135" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.RET_MONEY" display="退货金额" attribute="model@plt_tebu_order_item.RET_MONEY" attribute-type="普通属性" query-type="数字输入" order="136" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.REAL_UNIT_PRICE" display="实际零售价格" attribute="model@plt_tebu_order_item.REAL_UNIT_PRICE" attribute-type="普通属性" query-type="数字输入" order="137" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.REAL_MONEY" display="实际零售金额" attribute="model@plt_tebu_order_item.REAL_MONEY" attribute-type="普通属性" query-type="数字输入" order="138" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.NON_VIP_DISCOUNT_MONEY" display="非会员常规折扣额" attribute="model@plt_tebu_order_item.NON_VIP_DISCOUNT_MONEY" attribute-type="普通属性" query-type="数字输入" order="139" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.VIP_DISCOUNT_MONEY" display="会员常规折扣额" attribute="model@plt_tebu_order_item.VIP_DISCOUNT_MONEY" attribute-type="普通属性" query-type="数字输入" order="140" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.PACKAGE_DISCOUNT_MONEY" display="批量销售折扣额" attribute="model@plt_tebu_order_item.PACKAGE_DISCOUNT_MONEY" attribute-type="普通属性" query-type="数字输入" order="141" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.PROMOTION_DISCOUNT_MONEY" display="促销优惠折扣额" attribute="model@plt_tebu_order_item.PROMOTION_DISCOUNT_MONEY" attribute-type="普通属性" query-type="数字输入" order="142" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SINGLE_PROMOTION_MONEY" display="单品促销优惠折扣额" attribute="model@plt_tebu_order_item.SINGLE_PROMOTION_MONEY" attribute-type="普通属性" query-type="数字输入" order="143" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.TOTAL_PROMOTION_MONEY" display="整单促销优惠折扣额" attribute="model@plt_tebu_order_item.TOTAL_PROMOTION_MONEY" attribute-type="普通属性" query-type="数字输入" order="144" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SINGLE_REDUCE_MONEY" display="单品折让额" attribute="model@plt_tebu_order_item.SINGLE_REDUCE_MONEY" attribute-type="普通属性" query-type="数字输入" order="145" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.DEVIDE_REDUCE_MONEY" display="整单折让分摊额" attribute="model@plt_tebu_order_item.DEVIDE_REDUCE_MONEY" attribute-type="普通属性" query-type="数字输入" order="146" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.MONEY_DIFFER" display="收银损溢" attribute="model@plt_tebu_order_item.MONEY_DIFFER" attribute-type="普通属性" query-type="数字输入" order="147" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.RECEIVABLE_MONEY" display="应收金额" attribute="model@plt_tebu_order_item.RECEIVABLE_MONEY" attribute-type="普通属性" query-type="数字输入" order="148" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.GET_POINT" display="获得积分" attribute="model@plt_tebu_order_item.GET_POINT" attribute-type="普通属性" query-type="数字输入" order="149" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SALE_TYPE" display="SALE_TYPE" attribute="model@plt_tebu_order_item.SALE_TYPE" attribute-type="普通属性" query-type="字符输入" order="150" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SALE_FLG" display="SALE_FLG" attribute="model@plt_tebu_order_item.SALE_FLG" attribute-type="普通属性" query-type="字符输入" order="151" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.RET_REASON_ID" display="退货原因ID" attribute="model@plt_tebu_order_item.RET_REASON_ID" attribute-type="普通属性" query-type="数字输入" order="152" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.RET_REASON_NAME" display="退货原因名称" attribute="model@plt_tebu_order_item.RET_REASON_NAME" attribute-type="普通属性" query-type="字符输入" order="153" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.MODIFY_TIME" display="最后修改时间" attribute="model@plt_tebu_order_item.MODIFY_TIME" attribute-type="普通属性" query-type="时间选择" order="154" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.PRODUCT_SEASON" display="产品季" attribute="model@plt_tebu_order_item.PRODUCT_SEASON" attribute-type="普通属性" query-type="字符输入" order="155" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.SOURCE_DETAIL_ID" display="来源单明细ID" attribute="model@plt_tebu_order_item.SOURCE_DETAIL_ID" attribute-type="普通属性" query-type="数字输入" order="156" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@plt_tebu_order_item.UD_TICKET_LINE_NUM" display="销售小票明细行号" attribute="model@plt_tebu_order_item.UD_TICKET_LINE_NUM" attribute-type="普通属性" query-type="数字输入" order="157" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_购买次数" display="购买次数" attribute="model@tebu_quota_购买次数" attribute-type="指标属性" query-type="数字输入" order="158" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_购买订单数" display="购买订单数" attribute="model@tebu_quota_购买订单数" attribute-type="指标属性" query-type="数字输入" order="159" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_购买金额" display="购买金额" attribute="model@tebu_quota_购买金额" attribute-type="指标属性" query-type="数字输入" order="160" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_购买件数" display="购买件数" attribute="model@tebu_quota_购买件数" attribute-type="指标属性" query-type="数字输入" order="161" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_最后一次购买时间" display="最后一次购买时间" attribute="model@tebu_quota_最后一次购买时间" attribute-type="指标属性" query-type="时间选择" order="162" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_第一次购买时间" display="第一次购买时间" attribute="model@tebu_quota_第一次购买时间" attribute-type="指标属性" query-type="时间选择" order="163" compute-by-result="false" tips="">
+      <properties>
+        <property id="DatetimeType" value="介于,早于,晚于"/>
+        <property id="TimeSupportRelative" value="Support"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_第一次购买间隔" display="第一次购买间隔" attribute="model@tebu_quota_第一次购买间隔" attribute-type="指标属性" query-type="数字输入" order="164" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_平均每次购买金额" display="平均每次购买金额" attribute="model@tebu_quota_平均每次购买金额" attribute-type="指标属性" query-type="数字输入" order="165" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Float"/>
+        <property id="NumberInputRange" value="0,99999999.99"/>
+        <property id="NumberInputPrecision" value="2"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_平均每次购买件数" display="平均每次购买件数" attribute="model@tebu_quota_平均每次购买件数" attribute-type="指标属性" query-type="数字输入" order="166" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_平均每次购买间隔" display="平均每次购买间隔" attribute="model@tebu_quota_平均每次购买间隔" attribute-type="指标属性" query-type="数字输入" order="167" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+    <queryitem id="queryitem@tebu_quota_最后一次购买间隔" display="最后一次购买间隔" attribute="model@tebu_quota_最后一次购买间隔" attribute-type="指标属性" query-type="数字输入" order="168" compute-by-result="false" tips="">
+      <properties>
+        <property id="NumberType" value="大于,大于等于,介于,小于等于,不等于,等于,小于"/>
+        <property id="NumberInputType" value="Int"/>
+        <property id="NumberInputRange" value="0,99999999"/>
+        <property id="NumberInputPrecision" value="0"/>
+      </properties>
+    </queryitem>
+	  <queryitem id="queryitem@plt_tebu_customer.MEMBERNAME" display="会员名称" attribute="model@plt_tebu_customer.MEMBERNAME" attribute-type="普通属性" query-type="字符输入" order="169" compute-by-result="false" tips="">
+      <properties>
+        <property id="StringType" value="包含,不包含,等于,不等于,以字符结尾,以字符开头"/>
+        <property id="StringLengthLimit" value="200"/>
+      </properties>
+    </queryitem>
+  </queryitems>
+
+  <features>
+    <feature id="querynode@basic" display="属性查询" type="querynode">
+      <subject id="特步客户" display="特步客户">
+  
+        <category id="tebu-category-basicinfo" display="基础信息" type="1" typename="普通查询" order="0">
+          <category-queryitems>
+            <category-queryitem id="queryitem@plt_tebu_customer.VIP_INFO_ID" display="会员id"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.BIRTHDATE" display="生日"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.MOBILEPHONE" display="手机号码"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.REGISTERDATE" display="注册日期"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.LEVELNAME" display="会员等级"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.PROVINCE" display="省份"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.CITY" display="城市"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.REGION" display="区域"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.PROFESSION" display="职业"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.SALARY" display="收入水平"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.CERTIFICATETYPE" display="证件类型"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.COATSIZE" display="上衣尺码"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.SHOESSIZE" display="鞋的尺码"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.TROUSERSSIZE" display="下装尺码"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.CREATE_TIME" display="创建时间"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.IS_NEW" display="是否新会员"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.SALECOUNT" display="购买次数"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.EMAIL" display="电子邮箱"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.WECHAT" display="微信号"/>
+            <category-queryitem id="queryitem@plt_tebu_customer.ADDRESS" display="地址"/>
+          </category-queryitems>
+        </category>
+      </subject>
+    </feature>
+    <feature id="querynode@order" display="订单查询" type="querynode">
+      <subject id="特步客户" display="特步客户">
+        <category id="tebu-category-orderinfo" display="订单信息" type="3" typename="行为自定义" order="6">
+          <behavior id="behavior@order" display="订单查询" behavior-subject="特步订单" type="3" typename="行为自定义">
+            <behavior-queryitem id="queryitem@plt_tebu_order.REPORT_DATE" display="销售时间" x="0" y="2"/>
+            <behavior-queryitem id="queryitem@plt_tebu_customer.TOTALPOINT" display="总积分" x="0" y="3"/>
+            <behavior-queryitem id="queryitem@plt_tebu_order_item.QUANTITY" display="商品数量" x="0" y="4"/>
+            <behavior-queryitem id="queryitem@plt_tebu_order.TOTAL_MONEY" display="商品总金额" x="1" y="2"/>
+            <behavior-queryitem id="queryitem@plt_tebu_order.RECEIVABLE_MONEY" display="应收金额" x="1" y="3"/>
+            <behavior-queryitem id="queryitem@plt_tebu_order.ACTUAl_MONEY" display="实收金额" x="1" y="4"/>
+            <behavior-queryitem id="queryitem@plt_tebu_customer.TOTALMONEY" display="消费总额" x="2" y="2"/>
+            <behavior-queryitem id="queryitem@plt_tebu_order.OUT_POINTS" display="消费积分" x="2" y="3"/>
+            <behavior-queryitem id="queryitem@tebu_quota_购买次数" display="购买次数" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_购买订单数" display="购买订单数" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_购买金额" display="购买金额" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_购买件数" display="购买件数" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_最后一次购买时间" display="最后一次购买时间" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_第一次购买时间" display="第一次购买时间" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_第一次购买间隔" display="第一次购买间隔" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_平均每次购买金额" display="平均每次购买金额" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_平均每次购买件数" display="平均每次购买件数" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_平均每次购买间隔" display="平均每次购买间隔" x="0" y="0"/>
+            <behavior-queryitem id="queryitem@tebu_quota_最后一次购买间隔" display="最后一次购买间隔" x="0" y="0"/>
+          </behavior>
+        </category>
+      </subject>
+    </feature>
+	 <feature id="crudlist@customerinfo" display="客户基本信息查询" type="crudlist">
+		<subject id="特步客户" display="特步客户">
+	   <customerinfo-queryitems>
+                    <customerinfo-queryitem id="queryitem@plt_tebu_customer.SHOP_ID" display="店铺" is_head="1" order_id="6" tip="" />
+                    <customerinfo-queryitem id="queryitem@plt_tebu_customer.MEMBERCODE" display="用户编号" is_head="0" order_id="1" tip="" />
+                    <customerinfo-queryitem id="queryitem@plt_tebu_customer.MEMBERNAME" display="姓名" is_head="0" order_id="5" tip="" />
+                    <customerinfo-queryitem id="queryitem@plt_tebu_customer.EMAIL" display="邮箱" is_head="0" order_id="20" tip="" />
+                    <customerinfo-queryitem id="queryitem@plt_tebu_customer.MOBILEPHONE" display="手机" is_head="0" order_id="25" tip="" />
+                </customerinfo-queryitems>
+				 <customer-count>
+                    <item attribute="model@fun_特步客户_客户总人数" attribute-type="function" display="特步客户总数" />
+                </customer-count>
+				 <listitems>
+                    <listitem id="crudlist@tebu.customerinfo.customer_id" head-display="用户编号" attribute="model@plt_tebu_customer.MEMBERCODE" attribute-type="normal" text_align="left" query_type="" format="" order="1" alias="customerno" is_pk="1" can_edit="0" can_show="1" />
+                    <listitem id="crudlist@tebu.customerinfo.name" head-display="姓名" attribute="model@plt_tebu_customer.MEMBERNAME" attribute-type="normal" text_align="left" query_type="" format="" order="2" alias="firstname" is_pk="0" can_edit="0" can_show="1" />
+                     <listitem id="crudlist@tebu.customerinfo.level" head-display="会员等级" attribute="model@plt_tebu_customer.LEVELNAME" attribute-type="normal" text_align="left" query_type="" format="" order="5" alias="civility" is_pk="0" can_edit="0" can_show="1" />
+                    <listitem id="crudlist@tebu.customerinfo.birthday" head-display="生日" attribute="model@plt_tebu_customer.BIRTHDATE" attribute-type="normal" text_align="left" query_type="" format="" order="6" alias="birthdate" is_pk="0" can_edit="0" can_show="1" />
+                    <listitem id="crudlist@tebu.customerinfo.email" head-display="Email" attribute="model@plt_tebu_customer.EMAIL" attribute-type="normal" text_align="left" query_type="" format="" order="7" alias="email" is_pk="0" can_edit="0" can_show="1" />
+                    <listitem id="crudlist@tebu.customerinfo.mobile" head-display="手机号码" attribute="model@plt_tebu_customer.MOBILEPHONE" attribute-type="normal" text_align="left" query_type="" format="" order="8" alias="mobile" is_pk="0" can_edit="0" can_show="1" />
+                    <listitem id="crudlist@tebu.customerinfo.address" head-display="地址" attribute="model@plt_tebu_customer.ADDRESS" attribute-type="normal" text_align="left" query_type="" format="" order="9" alias="address" is_pk="0" can_edit="0" can_show="1" />
+                    </listitems>               
+		</subject>
+	 </feature>
+	   <feature id="crudlist@target_node" display="目标组" type="crudlist">
+            <subject id="特步客户" display="特步客户">
+                <target-listitems> 
+                    <target-listitem id="crudlist@ecs.targetNode.id" head-display="用户编号" attribute="model@plt_tebu_customer.MEMBERCODE" attribute-type="normal" authority="2" converter="contact_id" display="" />
+                    <target-listitem id="crudlist@ecs.targetNode.name" head-display="姓名" attribute="model@plt_tebu_customer.MEMBERNAME" attribute-type="normal" authority="0" converter="token_id" display="" />
+                    <target-listitem id="crudlist@ecs.targetNode.level" head-display="会员等级" attribute="model@plt_tebu_customer.LEVELNAME" attribute-type="normal" authority="0" converter="email" display="" />
+                    <target-listitem id="crudlist@ecs.targetNode.birthday" head-display="生日" attribute="model@plt_tebu_customer.BIRTHDATE" attribute-type="normal" authority="0" converter="wechatId" display="" />
+                    <target-listitem id="crudlist@ecs.targetNode.email" head-display="Email" attribute="model@plt_tebu_customer.EMAIL" attribute-type="normal" authority="0" converter="firstname" display="" />
+                    <target-listitem id="crudlist@ecs.targetNode.mobile" head-display="手机号码" attribute="model@plt_tebu_customer.MOBILEPHONE" attribute-type="normal" authority="0" converter="lastname" display="" />
+                </target-listitems>
+            </subject>
+        </feature>
+        <feature id="crudlist@response_node" display="响应组" type="crudlist">
+            <subject id="特步客户" display="特步客户">
+                <response-listitems>
+                    <target-listitem id="crudlist@ecs.responeNode.id" head-display="用户编号" attribute="model@plt_tebu_customer.MEMBERCODE" attribute-type="normal" authority="2" converter="contact_id" display="" />
+                    <target-listitem id="crudlist@ecs.responeNode.name" head-display="姓名" attribute="model@plt_tebu_customer.MEMBERNAME" attribute-type="normal" authority="0" converter="token_id" display="" />
+                     <target-listitem id="crudlist@ecs.responeNode.level" head-display="会员等级" attribute="model@plt_tebu_customer.LEVELNAME" attribute-type="normal" authority="0" converter="email" display="" />
+                    <target-listitem id="crudlist@ecs.responeNode.birthday" head-display="生日" attribute="model@plt_tebu_customer.BIRTHDATE" attribute-type="normal" authority="0" converter="wechatId" display="" />
+                    <target-listitem id="crudlist@ecs.responeNode.email" head-display="Email" attribute="model@plt_tebu_customer.EMAIL" attribute-type="normal" authority="0" converter="firstname" display="" />
+                    <target-listitem id="crudlist@ecs.responeNode.mobile" head-display="手机号码" attribute="model@plt_tebu_customer.MOBILEPHONE" attribute-type="normal" authority="0" converter="lastname" display="" />
+                </response-listitems>
+            </subject>
+        </feature>
+		
+		 <feature id="analysisnode@ecs.order" display="订单分析" type="orderanalysis_node">
+            <subject id="特步订单" display="特步订单">
+                <analysis-config shop_attribute_key="normal_model@plt_tebu_order.SHOP_ID" main_alias_key="normal_queryitem@plt_tebu_order.SHOP_ID" subject_code="tebu">
+                    <analysis_dimensions>
+                        <analysis_dimension mension_name="汇总" config_attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" config_aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" is_default_check="1" />
+                    </analysis_dimensions>
+                    <analysis_downloads>
+                          
+						<analysis_download config_attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" download_name="订单信息-主订单">
+                            <download_details>
+                                <download_detail detail_name="客户编号" attribut_key="normal_model@plt_tebu_order.VIP_CARD_NO" aliass_key="normal_queryitem@plt_tebu_order.VIP_CARD_NO" default_value="" display_dic_id="" order_id="10" authority_code="107,108" />
+                                <download_detail detail_name="下单时间" attribut_key="normal_model@plt_tebu_order.REPORT_DATE" aliass_key="normal_queryitem@plt_tebu_order.REPORT_DATE" default_value="" display_dic_id="" order_id="20" authority_code="107,108" />
+                                <download_detail detail_name="订单编号" attribut_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" default_value="" display_dic_id="" order_id="30" authority_code="107,108" />
+                                <download_detail detail_name="总金额" attribut_key="normal_model@plt_tebu_order.TOTAL_MONEY" aliass_key="normal_queryitem@plt_tebu_order.TOTAL_MONEY" default_value="" display_dic_id="" order_id="40" authority_code="107,108" />
+                                <download_detail detail_name="总数量" attribut_key="normal_model@plt_tebu_order.TOTAL_COUNT" aliass_key="normal_queryitem@plt_tebu_order.TOTAL_COUNT" default_value="" display_dic_id="" order_id="50" authority_code="107,108" />
+                            </download_details>
+                        </analysis_download>
+                        <analysis_download config_attribute_key="normal_model@plt_tebu_order_item.UD_TICKET_LINE_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_LINE_ID" download_name="订单信息-子订单（全量）">
+                            <download_details>
+                                <download_detail detail_name="订单编号" attribut_key="normal_model@plt_tebu_order_item.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_ID" default_value="" display_dic_id="" order_id="1" authority_code="107,108" />
+                                <download_detail detail_name="子订单编号" attribut_key="normal_model@plt_tebu_order_item.UD_TICKET_LINE_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_LINE_ID" default_value="" display_dic_id="" order_id="2" authority_code="107,108" />
+                                <download_detail detail_name="商品数量" attribut_key="normal_model@plt_tebu_order_item.QUANTITY" aliass_key="normal_queryitem@plt_tebu_order_item.QUANTITY" default_value="" display_dic_id="" order_id="4" authority_code="107,108" />
+                                <download_detail detail_name="实付金额" attribut_key="normal_model@plt_tebu_order_item.REAL_MONEY" aliass_key="normal_queryitem@plt_tebu_order_item.REAL_MONEY" default_value="" display_dic_id="" order_id="5" authority_code="107,108" />
+                            </download_details>
+                        </analysis_download>
+                       <analysis_download config_attribute_key="normal_model@plt_tebu_order_item.UD_TICKET_LINE_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_LINE_ID" download_name="订单信息-子订单（符合筛选条件）">
+                            <download_details>
+                                <download_detail detail_name="订单编号" attribut_key="normal_model@plt_tebu_order_item.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_ID" default_value="" display_dic_id="" order_id="1" authority_code="107,108" />
+                                <download_detail detail_name="子订单编号" attribut_key="normal_model@plt_tebu_order_item.UD_TICKET_LINE_ID" aliass_key="normal_queryitem@plt_tebu_order_item.UD_TICKET_LINE_ID" default_value="" display_dic_id="" order_id="2" authority_code="107,108" />
+                                <download_detail detail_name="商品数量" attribut_key="normal_model@plt_tebu_order_item.QUANTITY" aliass_key="normal_queryitem@plt_tebu_order_item.QUANTITY" default_value="" display_dic_id="" order_id="4" authority_code="107,108" />
+                                <download_detail detail_name="实付金额" attribut_key="normal_model@plt_tebu_order_item.REAL_MONEY" aliass_key="normal_queryitem@plt_tebu_order_item.REAL_MONEY" default_value="" display_dic_id="" order_id="5" authority_code="107,108" />
+                            </download_details>
+                        </analysis_download> 
+                    </analysis_downloads>
+                    <analysis_quotas>
+                        <!--指标属性-->
+                        <!--第一列-->
+                     
+                        <analysis_quota quota_name="购买次数" function_id="model@function_tebu_购买次数" display_data_type="integer" display_order_id="7" is_default_check="1" >
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.SHOP_ID" aliass_key="normal_queryitem@plt_tebu_order.SHOP_ID" mapping_name="dp_id"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" mapping_name="customerno"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.REPORT_DATE" aliass_key="normal_queryitem@plt_tebu_order.REPORT_DATE" mapping_name="create_time"/>
+                        </analysis_quota>
+                        <analysis_quota quota_name="购买金额" function_id="model@function_tebu_购买金额" display_data_type="decimals_place_2" display_order_id="10" is_default_check="1" >
+                            <properties_attribute attribute_key="dynamic_model@_dynamic_特步订单_实付金额" aliass_key="dynamic_1" mapping_name="payment"/>
+                        </analysis_quota>
+                        <analysis_quota quota_name="购买件数" function_id="model@function_tebu_购买件数" display_data_type="integer" display_order_id="13" is_default_check="1" >
+                            <properties_attribute attribute_key="dynamic_model@_dynamic_特步订单_购买件数" aliass_key="dynamic_2" mapping_name="num"/>
+                        </analysis_quota>
+                      <!--  <analysis_quota quota_name="平均每人购买次数" function_id="model@function_tebu_平均每人购买次数" display_data_type="decimals_place_2" display_order_id="2" is_default_check="0" >
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.SHOP_ID" aliass_key="normal_queryitem@plt_tebu_order.SHOP_ID" mapping_name="dp_id"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" mapping_name="customerno"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.REPORT_DATE" aliass_key="normal_queryitem@plt_tebu_order.REPORT_DATE" mapping_name="create_time"/>
+                        </analysis_quota>
+                        <analysis_quota quota_name="平均每人购买金额" function_id="model@function_tebu_平均每人购买金额" display_data_type="decimals_place_2" display_order_id="5" is_default_check="0" >
+                            <properties_attribute attribute_key="dynamic_model@_dynamic_特步订单_实付金额" aliass_key="dynamic_1" mapping_name="payment"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" mapping_name="customerno"/>
+                        </analysis_quota>
+                        <analysis_quota quota_name="平均每人购买件数" function_id="model@function_tebu_平均每人购买件数" display_data_type="decimals_place_2" display_order_id="8" is_default_check="0" >
+                            <properties_attribute attribute_key="dynamic_model@ecs_dynamic_ECS订单_购买件数" aliass_key="dynamic_2" mapping_name="num"/>
+                            <properties_attribute attribute_key="normal_model@plt_tebu_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" mapping_name="customerno"/>
+                        </analysis_quota>
+                        <analysis_quota quota_name="平均每次购买金额" function_id="model@function_tebu_平均每次购买金额" display_data_type="decimals_place_2" display_order_id="9" is_default_check="0" >
+                            <properties_attribute attribute_key="dynamic_model@_dynamic_特步订单_实付金额" aliass_key="dynamic_1" mapping_name="payment"/>
+                            <properties_attribute attribute_key="normal_model@plt_ecs_order.SHOP_ID" aliass_key="normal_queryitem@plt_tebu_order.SHOP_ID" mapping_name="dp_id"/>
+                            <properties_attribute attribute_key="normal_model@plt_ecs_order.UD_TICKET_ID" aliass_key="normal_queryitem@plt_tebu_order.UD_TICKET_ID" mapping_name="customerno"/>
+                            <properties_attribute attribute_key="normal_model@plt_ecs_order.REPORT_DATE" aliass_key="normal_queryitem@plt_tebu_order.REPORT_DATE" mapping_name="create_time"/>
+                        </analysis_quota>-->
+                         
+                    </analysis_quotas>
+                    <analysis_screening name="订单分析条件">
+                        <analysis_screening_conditions>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order.REPORT_DATE"     pos_x="0" pos_y="1"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_customer.TOTALPOINT"   pos_x="0" pos_y="2"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order_item.QUANTITY"   pos_x="0" pos_y="3"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order.TOTAL_MONEY"     pos_x="1" pos_y="1"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order.RECEIVABLE_MONEY" pos_x="1" pos_y="2"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order.ACTUAl_MONEY"     pos_x="1" pos_y="3"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_customer.TOTALMONEY"    pos_x="2" pos_y="1"/>
+							 <analysis_screening_condition query_item_id="queryitem@plt_tebu_order.OUT_POINTS"       pos_x="2" pos_y="2"/>
+							 
+						</analysis_screening_conditions>
+                    </analysis_screening>
+                </analysis-config>
+            </subject>
+        </feature>
+		<feature id="selectbox@namematch_node" display="名单匹配" type="selectbox">
+            <match_meta id="特步客户" display="特步客户"/>
+        </feature>
+		 <feature id="tags@sms_node" display="短信节点tags" type="selectbox">
+            <subject id="特步客户" display="特步客户">
+                <tags_metas mobile_attribute="model@plt_tebu_customer.MOBILEPHONE" meta_segment_model_id="1">
+                    <tag_meta attribute-type="普通属性" attribute_id="model@plt_tebu_customer.MEMBERNAME" source="varcenter" sort="1" imgName="" />
+                    <tag_meta attribute-type="普通属性" attribute_id="model@plt_tebu_customer.BIRTHDATE" source="varcenter" sort="2" imgName="" />
+                </tags_metas>
+            </subject>
+        </feature>
+        <feature id="edm@taobao_node" display="EDM" type="edmnode">
+            <subject id="特步客户" display="特步客户">
+                <edm_node meta_segment_model_id="1" email_attribute="model@plt_tebu_customer.EMAIL">
+                </edm_node>
+            </subject>
+        </feature>
+  </features>
+   <plat_relation id="tebu" authority_id="1" code="特步平台" subject_id="特步客户" plat_type="1" default_sel="0" filter_name="店铺选择" dic_key="88000" is_associated_permissions="1" order="2">
+        <query_filter subject_id="特步客户" attribute="queryitem@plt_tebu_customer.SHOP_ID"/>
+        <query_filter subject_id="特步订单" attribute="normal_model@plt_tebu_order.SHOP_ID"/>
+    </plat_relation>
+</root>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../layui/css/layui.css" />
+<script type="text/javascript" src="../js/jquery-1.11.0.js"></script>
+
+<style type="text/css">
+.item {
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	text-indent: 20px;
+	border: 1px solid #F0F0F0;
+	cursor: pointer;
+}
+
+.current {
+	background: #CCC
+}
+</style>
+</head>
+<body>
+	<div class="layui-form-item">
+		<label class="layui-form-label">编号</label>
+		<div class="layui-input-block">
+			<input type="text" id="code" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">平台名称</label>
+		<div class="layui-input-block">
+			<input type="text" id="name" lay-verify="title" autocomplete="off"
+				class="layui-input">
+		</div>
+	</div>
+	<div class="layui-form-item" style="text-align: center;">
+		<button class="layui-btn" id="add-btn">添加</button>
+	</div>
+</body>
+<script type="text/javascript">
+	function addSeg(data, fun) {
+		$.ajax({
+			url : "../../seg/add",
+			data : data,
+			success : function(data) {
+				if(fun){
+					fun();
+				}
+			}
+		})
+	}
+	$("#add-btn").click(function(){
+		var data={};
+		data.db_id=uuid();
+		data.code=$("#code").val();
+		data.name=$("#name").val();
+		addSeg(data,function(){
+			window.parent.layer.closeAll();
+			window.parent.seg.segs.push(data);
+		})
+	})
+</script>
+</html>

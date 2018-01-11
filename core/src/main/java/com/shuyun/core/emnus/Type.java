@@ -1,0 +1,5 @@
+package com.shuyun.core.emnus;
+
+public enum Type {
+	VARCHAR,CHAR,TEXT,INT,BIGINT,BLOB,CLOB,DOUBLE,FLOAT,LONGTEXT,DECIMAL,DATE,DATETIME,TIMESTAMP
+}
